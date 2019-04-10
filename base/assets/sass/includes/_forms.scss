@@ -1,0 +1,43 @@
+@import "./breakpoints";
+
+.form {
+  &__inner {
+    @media (min-width: $screen-sm) {
+      padding: 0px;
+    }
+
+    div.row,
+    div[class*="col"] {
+      margin-right: 0px;
+      margin-left: 0px;
+
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    div[class*="col"] {
+      padding-left: 0px;
+      padding-right: 0px;
+
+      @media (min-width: $screen-sm) {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+    
+    .checkboxlist {
+      .checkbox input[type="checkbox"],
+      .checkbox-inline input[type="checkbox"],
+      .radio input[type="radio"],
+      .radio-inline input[type="radio"] {
+        margin-top: 8px;
+      }
+    }
+  }
+}
+
+.error-list {
+  &__error {
+    color: red;
+  }
+}

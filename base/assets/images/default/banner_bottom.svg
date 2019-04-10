@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="300px" viewBox="0 0 1440 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,2958 C272.429687,2999.59896 512.429688,3020.39844 720,3020.39844 C927.570313,3020.39844 1167.57031,2999.59896 1440,2958 L1440,3258 L1008.49219,3258 L0,3258 L0,2958 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Large-Devices-(-≥-1200px-)" transform="translate(0.000000, -2958.000000)">
+            <g id="Rectangle-3">
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <path stroke="#979797" stroke-width="1" d="M0.5,2958.58212 L0.5,3257.5 L1439.5,3257.5 L1439.5,2958.58212 C1167.28429,3000.1261 927.451411,3020.89844 720,3020.89844 C512.548589,3020.89844 272.715712,3000.1261 0.5,2958.58212 Z"></path>
+            </g>
+        </g>
+    </g>
+</svg>

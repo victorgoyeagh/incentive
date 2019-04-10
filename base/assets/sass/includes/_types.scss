@@ -1,0 +1,178 @@
+
+  .info {
+    padding: 40px 20px 10px 20px;
+      i.fa {
+        font-size: 40px;
+        color: black; //$color-turquoise;
+      }
+    h3 {
+      margin: initial;
+    }
+  }
+
+.modules-list {
+  clear: both;
+
+  li {
+    a {
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.scrollTop--cont {
+  width: 100%;
+  position: fixed;
+  bottom: -1px;
+  z-index: 9999;
+  display: block;
+
+  button {
+    padding: 7px 10px 5px 10px;
+    background: rgba(178, 255, 255, 0.5);
+    @include opacity(1);
+    display: block;
+    margin: 0 auto;
+    @include transition(all, ease-out, 0.5s);
+    i {
+      &::before {
+        margin: 0px !important;
+      }
+    }
+  }
+}
+
+.contact-container {
+  input.text,
+  input[type="text"] {
+    width: 100%;
+    margin-bottom: 15px;
+    @media (min-width: $screen-sm) {
+      margin-bottom: 0;
+    }
+  }
+
+  button[type="submit"],
+  input[type="submit"] {
+    border-radius: 0;
+    width: 100%;
+    margin: 0;
+    @media (min-width: $screen-sm) {
+      margin: 20px 0 0;
+    }
+  }
+
+  .contact-list {
+    background-color: $color-reddish-grey--wash;
+    margin: 0;
+    float: left;
+    width: 100%;
+    overflow: hidden;
+
+    &__head {
+      background-color: grey;
+      color: white;
+    }
+
+    &__item {
+      label {
+        display: inherit;
+      }
+
+      td {
+        padding: 10px 20px;
+      }
+    }
+  }
+}
+
+.features {
+  min-height: 194px !important;
+  background-repeat: no-repeat;
+  background-attachment: initial;
+  background-size: 100% 200px;
+  background-position: 0 0;
+  @media (min-width: $screen-sm) {
+    min-height: 450px !important;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-position: 43% 0;
+  }
+}
+
+ul.social-links {
+  margin-top: 8px;
+  width: 100%;
+  position: relative;
+  float: left;
+  clear: both;
+
+  li {
+    float: left;
+    margin-right: 10px;
+
+    .fa {
+      color: grey;
+      font-size: 30px;
+
+      &.fa-facebook-square {
+        &:hover {
+          color: #3b5998;
+        }
+      }
+
+      &.fa-twitter-square {
+        &:hover {
+          color: #1da1f2;
+        }
+      }
+
+      &.fa-google-plus-square {
+        &:hover {
+          color: #db4437;
+        }
+      }
+
+      &.fa-linkedin-square {
+        &:hover {
+          color: #0077b5;
+        }
+      }
+    }
+  }
+}
+
+$permit-height: 400px;
+
+.intro {
+  background-color: $color-turquoise;
+  min-height: 200px !important;
+
+  &__snippet {
+    //color: white;
+    position: relative;
+    text-align: center;
+    padding: 0 10%;
+    @media (min-width: $screen-sm) {
+      padding: 0;
+    }
+
+    &__icon {
+      //padding: 0 10px;
+      @include font-size(8);
+    }
+
+    h2 {
+      text-transform: capitalize;
+      @include font-size(2.4);
+      padding-top: 0;
+      margin-top: 0;
+      @media (min-width: $screen-sm) {
+        font-size: 30px;
+      }
+    }
+  }
+}

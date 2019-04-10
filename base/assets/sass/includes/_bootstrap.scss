@@ -1,0 +1,84 @@
+.btn {
+
+  i {
+    &:before {
+      margin: 0 4px 0 10px !important;
+    }
+  }
+
+  &.modal-close {
+    position: absolute;
+    right: 0px;
+    top: 5px;
+
+  }
+
+  &.btn-default {
+    padding: 16px 28px 14px 28px;//8px 10px 9px 14px;
+    color: $color--white;
+    border-color: $color-turquoise;
+    background-color: $color-turquoise;
+    margin-bottom: 10px;
+    @include radius(2px);
+    //@include radius(30px);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+
+    &.btn-brand {
+      background-color: transparent;
+      color: $color-turquoise;
+      border: 2px solid $color-turquoise;
+    }
+
+    &.btn-xlrg {
+        text-transform: capitalize;
+        font-size: 30px;
+        padding: 10px 40px 10px 55px;
+        border-radius: 100px;
+        margin-top: 30px;
+    }
+
+    &.cta {
+        padding: 8px 14px;
+        font-size: 10px;
+        margin-top: 4px;
+        margin-left: 10px;
+        font-weight: bold;
+        line-height: 12px;
+        padding-bottom: 10px;
+        padding-top: 9px;
+    }
+
+}
+
+
+}
+
+.modal {
+
+    .modal-header {
+        h3 {
+            margin: 0px;
+            padding: 0px;
+        }
+    }
+
+    .modal-content {
+        border-radius: 0;
+    }
+    
+    .modal-footer {
+        .footer-container {
+            text-align: right;
+
+            .btn  {
+
+                &.btn-default {
+                    margin-left: 10px;
+                    float: right;
+                }
+            }
+        }
+    }
+}

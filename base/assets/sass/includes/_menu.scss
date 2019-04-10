@@ -1,0 +1,247 @@
+/** bootstrap override **/
+
+$nav-font: 400 112.5%/1.4 "Open Sans", Helvetica, Arial, sans-serif;
+$trans-speed: 0.2s;
+$trans-ease: ease-out;
+
+@mixin mainItemHover {
+  color: $color--black;
+  background-color: $color--white;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-color: $color-turquoise;
+  border-bottom-width: 0;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: red;
+  transform: rotate(45 Deg);
+}
+
+.navbar {
+  margin: 0;
+  border: none;
+  z-index: 999;
+  position: initial;
+
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    @media (min-width: $screen-sm) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  .navbar-header {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    @include transition(all, ease-out, $trans-speed);
+    @media (min-width: $screen-sm) {
+      left: initial !important;
+      padding-left: 0px;
+    }
+
+    .navbar-toggle {
+      padding: 10px 10px;
+      position: relative;
+      display: block;
+      margin-top: 18px;
+      background-color: $color-turquoise;
+      border-radius: 0;
+      @media (min-width: $screen-sm) {
+        display: none;
+      }
+
+      .icon-bar {
+        background: white;
+      }
+    }
+
+    .navbar-brand {
+      margin-left: 15px;
+      padding: 0px;
+      min-width: 150px;
+      width: auto;
+      display: inline-block;
+      position: relative;
+      top: 10px;
+      right: 0;
+      background-size: 86%;
+      background-position: 0 26px;
+      background-repeat: no-repeat;
+      background-image: $logo--black;
+
+      @media (min-width: $screen-sm) {
+        margin-left: 0px;
+        background-image: $logo--white;
+      }
+
+      img {
+        @include responsive-image;
+      }
+    }
+  }
+
+  .navbar-collapse {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+
+    @media (max-width: 767px) {
+      background-color: rgba(13, 20, 31, 1);
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 90%;
+      z-index: 999;
+      margin: auto;
+      @include transition(left, ease-out, $trans-speed);
+    }
+
+    .navbar-nav {
+      padding: 30px 20px 0px 20px;
+      position: initial;
+      margin: 0px;
+      @media (max-width: $screen-sm) {
+        width: 90%;
+      }
+
+      .dropdown--fullwidth {
+        position: initial;
+      }
+
+      li {
+        clear: both;
+        @media (min-width: $screen-sm) {
+          clear: none;
+        }
+
+        a {
+          border: 2px solid transparent;
+          @include radius(2px);
+          font: $nav-font;
+          color: $color--white;
+          background: transparent;
+          height: 40px;
+          z-index: 99;
+          @include font-size(1.4);
+
+          @media (min-width: $screen-sm) {
+            padding-top: 8px;
+            padding-bottom: 8px;
+          }
+
+          &:hover {
+            @media (min-width: $screen-sm) {
+              color: $color--black;
+              background-color: $color--white;
+              border-color: $color-turquoise;
+            }
+          }
+        }
+
+        &.dropdown {
+          &:hover > a {
+            @media (min-width: $screen-sm) {
+              @include mainItemHover;
+            }
+          }
+
+          .dropdown-toggle {
+            @media (min-width: $screen-sm) {
+              height: 50px;
+            }
+          }
+
+          &:hover > div.dropdown-menu {
+            @media (min-width: $screen-sm) {
+              top: 70px;
+              @include radius(2px);
+              border: 2px solid $color-turquoise;
+              @include show-object("top", 40px);
+            }
+          }
+
+          div.dropdown-menu {
+            @media (min-width: $screen-sm) {
+              z-index: 9;
+              padding: 20px;
+              width: 100%;
+              content: "";
+              @include shadow(0px, 0px, 0px, $color-grey--wash-alt);
+              border-radius: 0;
+            }
+
+            @media (min-width: $screen-sm) {
+              width: 100% !important;
+              top: 80px;
+            }
+
+            @media (min-width: $screen-sm) {
+              width: auto;
+              @include hide-object();
+              display: block;
+              position: absolute;
+              @include transition(all, $trans-ease, $trans-speed);
+            }
+
+            .dropdown-cont {
+              padding: 0 20px 0 15px;
+
+              h3 {
+                margin: initial;
+                padding-bottom: 0px;
+
+                @media (min-width: $screen-sm) {
+                    margin: 20px 0;
+                    padding-bottom: 20px;
+                }
+              }
+
+              p {
+                color: $color--white;
+
+                @media (min-width: $screen-sm) {
+                  color: $color--black;
+                }
+              }
+
+              ul {
+                padding: 0;
+                li {
+                  a {
+                    height: auto;
+                    font: $nav-font;
+                    color: $color--white;
+                    border-width: 0;
+
+                    @media (min-width: $screen-sm) {
+                      color: $color--black;
+                      padding-top: 20px;
+                      padding-bottom: 20px;
+                    }
+
+                    &:hover {
+                      color: $color--black;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

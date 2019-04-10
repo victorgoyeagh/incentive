@@ -1,0 +1,9 @@
+.checkboxlist {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+
+  &__item {
+        display: inline-block;
+  }
+}
