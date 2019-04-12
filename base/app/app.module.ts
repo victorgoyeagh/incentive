@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 /* angular */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -35,6 +35,8 @@ import { ParallaxDirective } from './directives/parallax.directive';
 /* modules */
 import { ContactFormModule } from './components/contact-form/contact-form.module';
 import { QuoteFormModule } from './components/quote-form/quote-form.module';
+import { HttpInterceptorService } from './services/httpinterceptor.service';
+
 
 @NgModule({
     declarations: [
@@ -66,6 +68,10 @@ import { QuoteFormModule } from './components/quote-form/quote-form.module';
         BrowserAnimationsModule
     ],
     providers: [
+        { 
+            provide: HTTP_INTERCEPTORS,
+            useClass: HttpInterceptorService, multi: true 
+        },
         CommunicationService
     ],
     bootstrap:  [
