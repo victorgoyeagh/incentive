@@ -66,9 +66,7 @@ export class CalendarComponent implements OnInit, OnChanges {
 
     deselectCurrentDate() {
         this.weeks.map((week) => {
-            week.forEach((day) => {
-                day.selected = false;
-            })
+            week.map((day) => day.selected = false);
         });
         this.selectedDates = [];
     }
