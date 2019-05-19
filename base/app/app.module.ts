@@ -1,3 +1,4 @@
+import { CalendarComponent } from './components/calendar/calendar.component';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 /* angular */
 import { BrowserModule } from '@angular/platform-browser';
@@ -38,8 +39,10 @@ import { QuoteFormModule } from './components/quote-form/quote-form.module';
 import { HttpInterceptorService } from './services/httpinterceptor.service';
 
 
+
 @NgModule({
     declarations: [
+        CalendarComponent,
         BaseComponent,
         HomeComponent,
         HeaderComponent,

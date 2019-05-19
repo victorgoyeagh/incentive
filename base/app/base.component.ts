@@ -7,6 +7,7 @@ import { ParallaxDirection } from './directives/parallax.model';
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs/observable/of';
 import { empty } from 'rxjs/Observer';
+import * as moment_ from 'moment';
 
 
 
@@ -15,7 +16,7 @@ import { empty } from 'rxjs/Observer';
     templateUrl: './base.template.html'
 })
 
-export class BaseComponent implements OnInit {
+export class BaseComponent implements OnInit { 
     public currentYear: string = undefined;
     public ParallaxDirection = ParallaxDirection;
     private apiNotesPath = 'http://localhost:3000/notes';
@@ -74,6 +75,10 @@ export class BaseComponent implements OnInit {
 
         this._communicationService.ShareModalInfoData(modalInfo);
 
+    }
+
+    logSelectedDate(event: any) {
+        console.log((<moment_.Moment>event.mDate).toDate())
     }
 
 }
