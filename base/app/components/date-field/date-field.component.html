@@ -1,0 +1,44 @@
+<div class="container" [formGroup]="dateForm">
+    <div class="row">
+
+        <div class="col-xs-6">
+            <div class="row">
+
+                <div class="col-xs-2">
+                    <input type="text" id="day" formControlName="day" name="day" maxlength="2" [ngClass]="{
+                'form-control': true,
+                'invalid': dateForm.controls.day.invalid && dateForm.controls.day.touched,
+                'valid': dateForm.controls.day.valid && dateForm.controls.day.touched}
+                " />
+                </div>
+                <div class="col-xs-2">
+                    <input type="text" id="month" formControlName="month" name="month" maxlength="2" [ngClass]="{
+                'form-control': true,
+                'invalid': dateForm.controls.month.invalid && dateForm.controls.month.touched,
+                'valid': dateForm.controls.month.valid && dateForm.controls.month.touched}
+                " />
+                </div>
+                <div class="col-xs-3">
+                    <input type="text" id="year" formControlName="year" name="year" maxlength="4" [ngClass]="{
+                'form-control': true,
+                'invalid': dateForm.controls.year.invalid && dateForm.controls.year.touched,
+                'valid': dateForm.controls.year.valid && dateForm.controls.year.touched}
+                " />
+                </div>
+                <div class="col-xs-5">
+                    <button (click)="submitForm()" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div *ngIf="dateForm.controls.year.invalid" class="error-list">
+                        <span class="error-list__error" *ngIf="!dateForm.controls.year.errors.dateIsVaild">
+                            <small>The date is invalid</small>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

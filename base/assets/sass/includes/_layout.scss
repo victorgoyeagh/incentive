@@ -50,9 +50,9 @@ $clipped-allowance: 100px;
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     .lft {
-      padding-top: 160px;
+      padding-top: 140px;
       @media (min-width: $screen-sm) {
-        padding-top: 140px;
+        padding-top: 160px;
       }
       @media (min-width: $screen-md) {
         //padding-top: 150px;
@@ -131,6 +131,8 @@ $clipped-allowance: 100px;
   //border: 1px solid $color--white;
 
   .banner-buttons {
+      margin: 0px;
+      padding: 0px;
     float: left;
     margin-top: 16px;
   }
@@ -169,6 +171,7 @@ $clipped-allowance: 100px;
       @include font-size(4);
       font-weight: bold;
       line-height: 1.1;
+
       @media (min-width: $screen-sm) {
         line-height: 1.2;
         @include font-size(4);
@@ -182,6 +185,7 @@ $clipped-allowance: 100px;
         line-height: 1.2;
         @include font-size(4);
       }
+      
       @media (min-width: $screen-lg) {
         @include font-size(5.5);
       }

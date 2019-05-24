@@ -163,16 +163,12 @@
                                         id elit faucibus placerat. Nulla euismod semper imperdiet.
                                         Aenean tempus ante id neque condimentum, a cursus justo ullamcorper.
                                     </h2>
-                                    <ul class="list-inline banner-buttons">
-                                        <li>
-                                            <button class="btn btn-default">Learn More
-                                                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                            </button>
+                                    <ul class="row list-inline banner-buttons">
+                                        <li class="col-xs-6"> 
+                                            <button class="btn btn-default btn-sml">Learn More <i class="fa fa-angle-right" aria-hidden="true"></i></button>
                                         </li>
-                                        <li>
-                                            <button class="btn btn-default btn-brand">Get in touch
-                                                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                            </button>
+                                        <li class="col-xs-6">
+                                            <button class="btn btn-default btn-sml btn-brand">Get in touch <i class="fa fa-angle-right" aria-hidden="true"></i></button>
                                         </li>
                                     </ul>
                                 </div>
@@ -187,11 +183,12 @@
                     </section>
                 </div>
 
-                <div class="row">
-                    <div class="col-sm-12">
-                        <calendar [selectedDates]="[]" (onSelectDate)="logSelectedDate($event)"></calendar>
+                
+                <section class="section">
+                    <div class="container-fluid">
+                        <app-date-field></app-date-field>
                     </div>
-                </div>
+                </section>
 
                 <section class="section">
                     <div class="container-fluid">

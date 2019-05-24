@@ -1,3 +1,4 @@
+import { DateFieldComponent } from './components/date-field/date-field.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 /* angular */
@@ -42,6 +43,7 @@ import { HttpInterceptorService } from './services/httpinterceptor.service';
 
 @NgModule({
     declarations: [
+        DateFieldComponent,
         CalendarComponent,
         BaseComponent,
         HomeComponent,

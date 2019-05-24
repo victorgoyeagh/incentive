@@ -1,5 +1,4 @@
 .btn {
-
   i {
     &:before {
       margin: 0 4px 0 10px !important;
@@ -10,75 +9,106 @@
     position: absolute;
     right: 0px;
     top: 5px;
-
   }
 
   &.btn-default {
-    padding: 16px 28px 14px 28px;//8px 10px 9px 14px;
+    padding: 16px 28px 14px 20px;
     color: $color--white;
     border-color: $color-turquoise;
     background-color: $color-turquoise;
     margin-bottom: 10px;
     @include radius(2px);
-    //@include radius(30px);
     text-transform: uppercase;
     font-size: 12px;
     font-weight: bold;
+    i:before {
+        position: absolute;
+        right: 18px;
+        top: 19px;
+      }
+      &.btn-brand {
+        i:before {
+          position: absolute;
+          right: 16px;
+          top: 20px;
+        }
+      }
 
     &.btn-brand {
       background-color: transparent;
       color: $color-turquoise;
       border: 2px solid $color-turquoise;
+      @media (max-width: $screen-sm) {
+        border: 1px solid #40e0d0;
+      }
+    }
+
+    @media (max-width: $screen-sm) {
+      &.btn-sml {
+        padding: 11px 26px 9px 20px;
+        width: 100%;
+        &:before {
+          margin: 0px;
+        }
+      }
+      padding: 16px 28px 20px 16px;
+      i:before {
+        position: absolute;
+        right: 16px;
+        top: 14px;
+      }
+      &.btn-brand {
+        i:before {
+          position: absolute;
+          right: 16px;
+          top: 14px;
+        }
+      }
     }
 
     &.btn-xlrg {
-        text-transform: capitalize;
-        font-size: 30px;
-        padding: 10px 40px 10px 55px;
-        border-radius: 100px;
-        margin-top: 30px;
+      text-transform: capitalize;
+      font-size: 30px;
+      padding: 10px 40px 10px 55px;
+      border-radius: 100px;
+      margin-top: 30px;
     }
 
     &.cta {
-        padding: 8px 14px;
-        font-size: 10px;
-        margin-top: 4px;
-        margin-left: 10px;
-        font-weight: bold;
-        line-height: 12px;
-        padding-bottom: 10px;
-        padding-top: 9px;
+      padding: 8px 14px;
+      font-size: 10px;
+      margin-top: 4px;
+      margin-left: 10px;
+      font-weight: bold;
+      line-height: 12px;
+      padding-bottom: 10px;
+      padding-top: 9px;
     }
-
-}
-
-
+  }
 }
 
 .modal {
+  .modal-header {
+    h3 {
+      margin: 0px;
+      padding: 0px;
+    }
+  }
 
-    .modal-header {
-        h3 {
-            margin: 0px;
-            padding: 0px;
+  .modal-content {
+    border-radius: 0;
+  }
+
+  .modal-footer {
+    .footer-container {
+      text-align: right;
+
+      .btn {
+        &.btn-default {
+          margin-left: 10px;
+          float: right;
         }
+      }
     }
-
-    .modal-content {
-        border-radius: 0;
-    }
-    
-    .modal-footer {
-        .footer-container {
-            text-align: right;
-
-            .btn  {
-
-                &.btn-default {
-                    margin-left: 10px;
-                    float: right;
-                }
-            }
-        }
-    }
+  }
 }

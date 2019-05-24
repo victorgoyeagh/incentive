@@ -1,6 +1,6 @@
 //defaults
 
-html, 
+html,
 body {
   //overflow-x: hidden;
   //overflow-y: auto !important;
@@ -8,15 +8,14 @@ body {
 
 body {
   background: transparent;
-  font-family:  $font-san-serif;
+  font-family: $font-san-serif;
   -webkit-font-smoothing: antialiased;
   background: $color--white;
-  overflow-x: hidden; 
-  * :not(h1,h2,h3,h4,h5,h6){
+  overflow-x: hidden;
+  * :not(h1, h2, h3, h4, h5, h6) {
     font-size: 12px;
   }
 }
-
 
 h1,
 h2,
@@ -27,22 +26,28 @@ h6 {
   clear: both;
   font-weight: normal;
   font-family: $noto-serif-font;
-  @media (min-width: $screen-sm) {} 
+  @media (min-width: $screen-sm) {
+  }
   color: #173b70;
 }
 
 h1 {
-
-text-shadow: #4c4c4c 1px 1px 1px;
+  text-shadow: #4c4c4c 1px 1px 1px;
   font-family: $noto-serif-font;
-  @media (min-width: $screen-sm) {}
+  @media (min-width: $screen-sm) {
+  }
 }
-h2,h3,h4,p,ol,ul {
-    font-family: $roboto-font;
+h2,
+h3,
+h4,
+p,
+ol,
+ul {
+  font-family: $roboto-font;
 }
 
-h3 { 
-    font-size: 16px;
+h3 {
+  font-size: 16px;
   margin: 20px 0;
   width: 100%;
   float: left;
@@ -53,32 +58,32 @@ h3 {
     margin-right: 10px;
   }
   span {
-      display: block;
-      width: 40px;
-      height: 2px;
-        bottom: 12px;
-      position: absolute;
-      background-color: $color-turquoise;
-      &.center{
-        left: 46%;
-        text-align: center;
-      }
+    display: block;
+    width: 40px;
+    height: 2px;
+    bottom: 12px;
+    position: absolute;
+    background-color: $color-turquoise;
+    &.center {
+      left: 46%;
+      text-align: center;
+    }
   }
 }
 
 h4 {
-    &.intro-header {
-        font-size: 28px;
-        line-height: 36px;
-        margin-top: 10px;
-        margin-bottom: 30px;
-    }
+  &.intro-header {
+    font-size: 28px;
+    line-height: 36px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
 }
 
 h5 {
   display: block;
   float: left;
-  font-family: "Open Sans",sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 input,
@@ -88,14 +93,16 @@ p {
   font-weight: normal;
 }
 
-p,ol,ul {
-   font-family: $font-san-serif;
-   line-height: 28px;
+p,
+ol,
+ul {
+  font-family: $font-san-serif;
+  line-height: 28px;
 
-   &.intro-text {
-        margin-top: 12px;
-       font-size: 14px;
-   }
+  &.intro-text {
+    margin-top: 12px;
+    font-size: 14px;
+  }
 }
 
 form {
@@ -135,25 +142,24 @@ ul {
     font-family: $font-san-serif;
   }
 }
- 
 
-button  {
-.btn {
-  @include radius(0px);
-  text-transform: capitalize;
+button {
+  &.btn {
+    @include radius(0px);
+    text-transform: capitalize;
 
-  i:before {
-    margin: 0 10px;
-  }
+    i:before {
+      margin: 0 0px !important;
+    }
 
-  &.icon {
-    padding: 6px 12px 6px 0;
+    &.icon {
+      padding: 6px 12px 6px 0;
 
-    .icon+.icon {
-      margin-left: 20px;
+      .icon + .icon {
+        margin-left: 20px;
+      }
     }
   }
-}
 }
 
 table {
@@ -173,7 +179,6 @@ table {
   & + & {
     margin-bottom: 10px;
   }
-
 }
 
 img {
@@ -199,7 +204,7 @@ label {
 
   &:after,
   &:before {
-    content: '\232A';
+    content: "\232A";
     position: absolute;
     display: block;
     width: 25px;
@@ -216,7 +221,7 @@ textarea {
   width: 100%;
 }
 
-input[type='range'] {
+input[type="range"] {
   border: 0;
   -webkit-appearance: none;
   height: 4px;
