@@ -1,13 +1,12 @@
-import { Renderer, Component, QueryList, Inject, EventEmitter, ViewChild, ViewContainerRef, OnInit, Input, OnChanges, SimpleChanges, ElementRef, AfterViewInit, ComponentFactoryResolver } from '@angular/core';
-import { ReactiveFormsModule, FormsModule, FormControl, FormBuilder, FormGroup, FormArray, Validators, NgForm, ValidatorFn, AbstractControl } from '@angular/forms';
-import { Http, Response, RequestOptions, ResponseContentType, Headers } from '@angular/http';
-import { BrowserModule, DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { QuoteFormComponent } from './../quote-form/components/quote-form.component';
+import { Component, Output, EventEmitter, ViewChild, OnInit, Input, OnChanges, SimpleChanges, ElementRef, AfterViewInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { IDimensions, ModalFormType, ModalCommand, ModalType, ModalInfo, ModalLocation } from './../../entities/modal.entity';
 import { ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
 import { IModalReturnValue } from "./../../entities/modal_alt.entity";
 import { MiscUtil } from './../../helpers/MiscUtils';
 import { ClassHelper } from './../../helpers/ClassUtil';
-import { Subject, Subscription, Observable} from 'rxjs';
 import { environment } from 'environments/environment.dev';
 import { CommunicationService } from 'app/services/communication.service';
 
@@ -41,9 +40,13 @@ export class ModalOverlayComponent implements OnInit, OnChanges, AfterViewInit {
     private formValues: any;
     private uiConfig = environment.uiConfig;
 
+
+    @Output() closeModalEvent = new EventEmitter<boolean>();
+
     @Input() multiple: boolean = false;
     @ViewChild('modal') modal: ModalComponent;
     @ViewChild('modal') modalQuery: ElementRef;
+    @ViewChild('quoteFormControl') quoteFormControl: QuoteFormComponent;
 
     constructor(
         private _sanitizer: DomSanitizer,
@@ -72,7 +75,7 @@ export class ModalOverlayComponent implements OnInit, OnChanges, AfterViewInit {
 
     BuildModal(modalInfo: ModalInfo) {
 
-        console.log(modalInfo);
+        // console.log(modalInfo);
 
         //apply content
         this.modalKey = modalInfo.ModalKey;
@@ -126,35 +129,40 @@ export class ModalOverlayComponent implements OnInit, OnChanges, AfterViewInit {
         ch.removeClass('center');
         ch.removeClass('right');
         ch.removeClass('left');
-        ch.addClass(this.locationClass); 
+        ch.addClass(this.locationClass);
 
     }
-    
-    /** file management end **/ 
+
+    /** file management end **/
 
     CloseModal(response: boolean, ev?: Event) {
 
-        //intercept get form values and check if a form and validate 
-        let formValues = <FormGroup>this.GetFormValues(this.modalFormType),
-            isFormGroup = (formValues instanceof FormGroup);
+        if (!response) {
 
-        /* validate if of form type */
-        if (isFormGroup) {
-            let formIsValid = formValues.valid;
-            if (!formIsValid) {
-                return false;
+            //intercept get form values and check if a form and validate 
+            let formValues = <FormGroup>this.GetFormValues(this.modalFormType),
+                isFormGroup = (formValues instanceof FormGroup);
+
+            /* validate if of form type */
+            if (isFormGroup) {
+                let formIsValid = formValues.valid;
+                if (!formIsValid) {
+                    return false;
+                } else {
+                    this.BroadcastModalResponse(response, formValues);
+                    this.modal.close(!response);
+                    return true;
+                }
             }
-        }
-  
-        this.BroadcastModalResponse(response, formValues);
+
+        } 
 
         this.modal.close(response);
-        return false;
     }
 
-    DismissModal(response: boolean, ev: Event) { 
+    DismissModal(response: boolean, ev: Event) {
         this.modal.close(response);
-        return false;
+        //return false;
     }
 
     OpenModal() {
@@ -193,9 +201,12 @@ export class ModalOverlayComponent implements OnInit, OnChanges, AfterViewInit {
         switch (modalFormType) {
             case ModalFormType.Default:
                 break;
+            case ModalFormType.QuoteRequestForm:
+                this.quoteFormControl.validateForm();
+                this.formValues = this.quoteFormControl.quoteForm;
+                break;
             default:
-            
-                //console.log("No form variables were captured!");
+                console.log("No form variables were captured!");
                 break;
         }
 

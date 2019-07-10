@@ -50,7 +50,7 @@ new MenuCtrl("toggleBtn", "toggleNav", "toggleHeader", "toggleMain", true);
         }, 500);
 
         $(window).resize(function () {
-            if (window.innerWidth < 768) {
+            if (window.innerWidth < 960) {
                 initCustomScrollbar();
             } else {
                 $(scrollPane).mCustomScrollbar('destroy');

@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Subject, Observable } from 'rxjs';
+import { Subject, Observable, BehaviorSubject } from 'rxjs';
 import { IDimensions, ModalFormType, ModalCommand, ModalType, ModalInfo, ModalLocation } from './../entities/modal.entity';
 
 @Injectable()

@@ -1,6 +1,6 @@
-import { CalendarComponent } from './../components/calendar/calendar.component';
+import { IntroComponent } from './../components/intro/intro.component';
 import { ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule, RouterLinkActive } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from '../views/home.view';
 
 
@@ -12,7 +12,7 @@ const appRoutes: Routes = [
     },
     {
         path: 'calendar', 
-        component: CalendarComponent,
+        component: IntroComponent,
         pathMatch: 'full'
     }
     //{ path: '**', component: PageNotFoundComponent }

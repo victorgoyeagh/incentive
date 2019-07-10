@@ -1,18 +1,19 @@
 import { ClassHelper } from "./ClassUtil";
-import { WindowHelper } from "./WindowCtrl";
+//import { WindowHelper } from "./WindowCtrl";
 
 export class MenuCtrl {
     private toggleBtn: HTMLElement;
     private navigation: HTMLElement;
     private header: HTMLElement;
-    private main: HTMLElement; 
+    private main: HTMLElement;
+    private dropdown: HTMLElement;
 
-    constructor(btnId:string, navId:string, headerId:string, mainId:string, fixNav:boolean) { 
+    constructor(btnId: string, navId: string, headerId: string, mainId: string, fixNav: boolean) {
         this.toggleBtn = document.getElementById(btnId);
         this.navigation = document.getElementById(navId);
         this.header = document.getElementById(headerId);
         this.main = document.getElementById(mainId) || null;
-        
+
         let _self = this;
 
         this.toggleBtn.addEventListener("click", function (ev) {
@@ -20,7 +21,7 @@ export class MenuCtrl {
         });
 
         this.ForceNavigationHeight(true);
-        this.ForceNavigationHeight(false);
+       // this.ForceNavigationHeight(false);
 
         if (fixNav) {
             this.ControlNavigationDisplay();
@@ -31,7 +32,8 @@ export class MenuCtrl {
     ForceNavigationHeight = (init) => {
         let _self = this;
         window.addEventListener((init) ? "load" : "resize", function (ev) {
-            _self.navigation.style.height = window.innerHeight + "px";
+           // _self.navigation.style.height = window.innerHeight + "px";
+            _self.navigation.style.setProperty('height', window.innerHeight + "px", 'important');
         });
     }
 
@@ -61,7 +63,7 @@ export class MenuCtrl {
         let ms = main.style;
         let chHeader = new ClassHelper(header);
         let chMain = new ClassHelper(main);
-        let wd = new WindowHelper();
+        //let wd = new WindowHelper();
 
         if ((!navLeft) || (navLeft == "100%")) {
             nav.style.left = "20%";
@@ -70,7 +72,7 @@ export class MenuCtrl {
             ms.position = "absolute";
             chHeader.addClass("open");
             chMain.addClass("open");
-            wd.disableScroll();
+            // wd.disableScroll();
         } else {
             nav.style.left = "100%";
             header.style.left = "0%";
@@ -78,10 +80,9 @@ export class MenuCtrl {
             ms.position = "relative";
             chHeader.removeClass("open");
             chMain.removeClass("open");
-            wd.enableScroll();
+            // wd.enableScroll();
         }
 
         return false;
     }
 }
- 

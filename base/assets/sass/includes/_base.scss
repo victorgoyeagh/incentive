@@ -4,6 +4,7 @@ html,
 body {
   //overflow-x: hidden;
   //overflow-y: auto !important;
+  background-color: #0d141f;
 }
 
 body {
@@ -13,7 +14,7 @@ body {
   background: $color--white;
   overflow-x: hidden;
   * :not(h1, h2, h3, h4, h5, h6) {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
@@ -43,7 +44,14 @@ h4,
 p,
 ol,
 ul {
-  font-family: $roboto-font;
+  font-family: $noto-serif-font;
+}
+
+h2 {
+    font-size: 35px;
+    &.small {
+        font-size: 22px;
+    }
 }
 
 h3 {
@@ -72,6 +80,7 @@ h3 {
 }
 
 h4 {
+    font-size: 22px;
   &.intro-header {
     font-size: 28px;
     line-height: 36px;
@@ -191,6 +200,8 @@ hr {
   width: 100%;
   display: inline-block;
   clear: both;
+  margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 label {

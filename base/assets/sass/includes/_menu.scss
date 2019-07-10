@@ -1,8 +1,9 @@
 /** bootstrap override **/
 
-$nav-font: 400 112.5%/1.4 "Open Sans", Helvetica, Arial, sans-serif;
+$nav-font: 400 inherit "Open Sans", Helvetica, Arial, sans-serif;
 $trans-speed: 0.2s;
 $trans-ease: ease-out;
+$nav-divider: #bdeae6;
 
 @mixin mainItemHover {
   color: $color--black;
@@ -30,10 +31,14 @@ $trans-ease: ease-out;
   z-index: 999;
   position: initial;
 
+  @media (min-width: $screen-md) {
+    position: relative;
+  }
+
   .container {
     padding-right: 15px;
     padding-left: 15px;
-    @media (min-width: $screen-sm) {
+    @media (min-width: $screen-md) {
       padding-right: 0;
       padding-left: 0;
     }
@@ -47,8 +52,8 @@ $trans-ease: ease-out;
     padding-left: 15px;
     padding-right: 15px;
     @include transition(all, ease-out, $trans-speed);
-    @media (min-width: $screen-sm) {
-        width: auto;
+    @media (min-width: $screen-md) {
+      width: auto;
       left: initial !important;
       padding-left: 0px;
     }
@@ -61,7 +66,7 @@ $trans-ease: ease-out;
       margin-top: 18px;
       background-color: $color-turquoise;
       border-radius: 0;
-      @media (min-width: $screen-sm) {
+      @media (min-width: $screen-md) {
         display: none;
       }
 
@@ -84,7 +89,7 @@ $trans-ease: ease-out;
       background-repeat: no-repeat;
       background-image: $logo--black;
 
-      @media (min-width: $screen-sm) {
+      @media (min-width: $screen-md) {
         top: 10px;
         margin-left: 0px;
         background-image: $logo--white;
@@ -96,17 +101,59 @@ $trans-ease: ease-out;
     }
   }
 
+  @media (min-width: $screen-md) {
+    .navbar-collapse {
+      &.collapse {
+        height: auto !important;
+      }
+    }
+  }
   .navbar-collapse {
+    overflow-x: hidden !important;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $color-turquoise;
+    }
+
+    .logo-nav {
+      width: 100%;
+      height: 30px;
+      background-image: url("/assets/images/default/logo.png");
+      background-repeat: no-repeat;
+      background-position: top left;
+      background-size: contain;
+      max-width: 140px;
+      margin-left: 20px;
+      margin-top: 25px;
+      display: block;
+
+      @media (min-width: $screen-md) {
+        display: none;
+      }
+    }
+
     padding-right: 0 !important;
     padding-left: 0 !important;
+    overflow: scroll !important;
+ 
+    @media (min-width: $screen-md) {
+      overflow: hidden !important;
+    }
 
-    @media (max-width: 767px) {
-      background-color: rgba(13, 20, 31, 1);
+    @media (max-width: $screen-md) {
+        background-color: #141e30;
+        border-left: 1px solid rgb(24, 38, 64);
+      //background-color: rgba(13, 20, 31, 1);
       display: block;
       position: absolute;
       top: 0;
       left: 100%;
-      width: 90%;
+      // width: 90%;
       z-index: 999;
       margin: auto;
       @include transition(left, ease-out, $trans-speed);
@@ -116,8 +163,12 @@ $trans-ease: ease-out;
       padding: 30px 20px 0px 20px;
       position: initial;
       margin: 0px;
-      @media (max-width: $screen-sm) {
-        width: 90%;
+      float: left !important;
+      width: 100%;
+      @media (min-width: $screen-md) {
+        padding: 30px 0px 0px 20px;
+        width: auto;
+        float: right !important;
       }
 
       .dropdown--fullwidth {
@@ -125,73 +176,88 @@ $trans-ease: ease-out;
       }
 
       li {
+        width: 100%;
         clear: both;
-        @media (min-width: $screen-sm) {
+        @media (min-width: $screen-md) {
+          width: auto;
           clear: none;
         }
 
         a {
-          border: 2px solid transparent;
-          @include radius(2px);
+          background: transparent;
+          // border: 2px solid transparent;
           font: $nav-font;
           color: $color--white;
-          background: transparent;
           height: 40px;
           z-index: 99;
-          @include font-size(1.4);
+          //@include font-size(1.4);
+          @include radius(2px);
+          padding-left: 0px;
+          border-bottom: 1px solid $nav-divider; //$color-turquoise;
+          padding: 30px 0px 50px 0px;
+          @include font-size(1.7);
 
-          @media (min-width: $screen-sm) {
+          @media (min-width: $screen-md) {
+            @include font-size(1.4);
+            padding: 10px 15px;
+            border-bottom: 0px solid $color-turquoise;
             padding-top: 8px;
             padding-bottom: 8px;
           }
 
           &:hover {
-            @media (min-width: $screen-sm) {
-              color: $color--black;
-              background-color: $color--white;
-              border-color: $color-turquoise;
+            @media (min-width: $screen-md) {
+                color: $color-turquoise;
+                //border-bottom: 2px solid $nav-divider; //$color-turquoise;
+              // color: $color--black;
+              // background-color: $color--white;
+              //border-color: $color-turquoise;
             }
           }
         }
 
         &.dropdown {
           &:hover > a {
-            @media (min-width: $screen-sm) {
+            @media (min-width: $screen-md) {
               @include mainItemHover;
             }
           }
 
           .dropdown-toggle {
-            @media (min-width: $screen-sm) {
+            @media (min-width: $screen-md) {
               height: 50px;
             }
           }
 
           &:hover > div.dropdown-menu {
-            @media (min-width: $screen-sm) {
+            @media (min-width: $screen-md) {
               top: 70px;
               @include radius(2px);
-              border: 2px solid $color-turquoise;
+              // border: 2px solid $color-turquoise;
               @include show-object("top", 40px);
             }
           }
 
           div.dropdown-menu {
-            @media (min-width: $screen-sm) {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+              @include shadow(0px, 0px, 0px, $color-grey--wash-alt);
+            @media (min-width: $screen-md) {
+                position: absolute;
               z-index: 9;
               padding: 20px;
               width: 100%;
               content: "";
-              @include shadow(0px, 0px, 0px, $color-grey--wash-alt);
               border-radius: 0;
             }
 
-            @media (min-width: $screen-sm) {
+            @media (min-width: $screen-md) {
               width: 100% !important;
               top: 80px;
             }
 
-            @media (min-width: $screen-sm) {
+            @media (min-width: $screen-md) {
               width: auto;
               @include hide-object();
               display: block;
@@ -200,22 +266,25 @@ $trans-ease: ease-out;
             }
 
             .dropdown-cont {
-              padding: 0 20px 0 15px;
+              padding: 0px;
+              @media (min-width: $screen-md) {
+                padding: 0 20px 0 15px;
+              }
 
               h3 {
                 margin: initial;
                 padding-bottom: 0px;
 
-                @media (min-width: $screen-sm) {
-                    margin: 20px 0;
-                    padding-bottom: 20px;
+                @media (min-width: $screen-md) {
+                  margin: 20px 0;
+                  padding-bottom: 20px;
                 }
               }
 
               p {
                 color: $color--white;
 
-                @media (min-width: $screen-sm) {
+                @media (min-width: $screen-md) {
                   color: $color--black;
                 }
               }
@@ -228,15 +297,17 @@ $trans-ease: ease-out;
                     font: $nav-font;
                     color: $color--white;
                     border-width: 0;
+                    background: transparent;
+                    padding: 15px 0px;
 
-                    @media (min-width: $screen-sm) {
+                    @media (min-width: $screen-md) {
                       color: $color--black;
                       padding-top: 20px;
                       padding-bottom: 20px;
                     }
 
                     &:hover {
-                      color: $color--black;
+                      color: $color-turquoise; //$color--black;
                     }
                   }
                 }
@@ -246,5 +317,27 @@ $trans-ease: ease-out;
         }
       }
     }
+  }
+}
+
+@media (max-width: $screen-md) {
+  .dropdown .dropdown-menu {
+    background-color: transparent;// rgba(13, 20, 31, 1);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    opacity: 0;
+  }
+
+  .dropdown.open .dropdown-menu {
+    /* For Bootstrap 4, use .dropdown.show instead of .dropdown.open */
+    max-height: initial;
+    opacity: 1;
   }
 }

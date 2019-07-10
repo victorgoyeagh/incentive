@@ -1,11 +1,20 @@
 //NOTE: css imports at end of this file
 
-$banner-min-height: 600px;
+$banner-min-height: 650px;
 $clipped-allowance: 100px;
 
 .container {
   position: relative;
   //width: 100%;
+}
+
+.scrollcontent {
+    float: left;
+    clear: both;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #e2e2e2;
+    margin-bottom: 26px;
 }
 
 .banner-bottom {
@@ -35,8 +44,9 @@ $clipped-allowance: 100px;
 
   &__banner {
     border-top: 2px solid #dafffb;
-    min-height: 600px;
-    padding-right: 60px;
+    min-height: 650px;
+    padding-right: 0px;
+    padding-left: 0px;
     @media (min-width: $screen-sm) {
       padding-right: 0px;
     }
@@ -50,9 +60,12 @@ $clipped-allowance: 100px;
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     .lft {
-      padding-top: 140px;
-      @media (min-width: $screen-sm) {
-        padding-top: 160px;
+
+      padding-top: 100px; //140px;
+      @media (min-width: $screen-md) {
+       // padding-top: 200px;
+       padding-top: 100px;
+       float: inherit;
       }
       @media (min-width: $screen-md) {
         //padding-top: 150px;
@@ -62,7 +75,7 @@ $clipped-allowance: 100px;
     .rgt {
       padding-top: 0px;
 
-      @media (min-width: $screen-sm) {
+      @media (min-width: $screen-md) {
         padding-top: 18vh;
       }
 
@@ -71,30 +84,43 @@ $clipped-allowance: 100px;
       }
 
       .main-image {
-        margin-right: -60px;
+        //margin-right: -60px;
+        max-width: 370px;
+        margin: 0 auto;
+        max-width: 330px;
+        float: right;
+        
         img {
           @include responsive-image;
         }
 
-        @media (min-width: $screen-sm) {
+        @media (min-width: $screen-md) {
           margin-right: 0px;
         }
-        max-width: 530px;
-        float: right;
       }
     }
   }
 }
 
 .banner-bg {
+  padding-left: 30px;
+  padding-right: 30px;
+
+  @media (min-width: $screen-md) {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  min-height: 650px;
   z-index: 1;
-  filter: brightness(50%);
-  min-height: $banner-min-height;
+  //filter:brightness(40%) blur(10px);// brightness(40%);
+  //transform: scaleX(-1);
+  //min-height: $banner-min-height;
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
 
-  background-position: center center;
+  // background-position: center center;
+  background-position: bottom left;
   background-repeat: no-repeat;
   background-size: cover;
   //transition : top 0.1s ease-out, bottom 0.1s ease-in;
@@ -107,7 +133,7 @@ $clipped-allowance: 100px;
 
 .banner-bg-alt {
   z-index: 99;
-  min-height: $banner-min-height;
+  //min-height: $banner-min-height;
   width: 100%;
   position: absolute;
   top: 0;
@@ -125,16 +151,23 @@ $clipped-allowance: 100px;
   //@include gradient($color-banner-from, $color-banner-to);
   //display: table;
   width: 100%;
-  min-height: $banner-min-height;
+  //min-height: $banner-min-height;
   //min-height: $banner-min-height;
   background-color: transparent;
   //border: 1px solid $color--white;
 
   .banner-buttons {
-      margin: 0px;
-      padding: 0px;
-    float: left;
+    margin: 0px;
+    padding: 0px;
+    float: none;
+    @media (min-width: $screen-md) {
+        float: left;
+    }
     margin-top: 16px;
+
+    li {
+      padding-left: 0px !important;
+    }
   }
 
   .banner-image {
@@ -150,6 +183,7 @@ $clipped-allowance: 100px;
     //padding-top: 150px; //180px;
     //padding-right: 24%;
     //padding-right: 36%;
+    max-width: 610px;
     display: table-cell;
     text-align: center;
     vertical-align: middle;
@@ -168,13 +202,13 @@ $clipped-allowance: 100px;
       text-align: left;
       color: $color--white;
       margin-bottom: 10px;
-      @include font-size(4);
+      @include font-size(6);
       font-weight: bold;
       line-height: 1.1;
 
-      @media (min-width: $screen-sm) {
+      @media (min-width: $screen-md) {
         line-height: 1.2;
-        @include font-size(4);
+        @include font-size(5);
       }
       @media (min-width: $screen-md) {
         line-height: 1.2;
@@ -185,7 +219,7 @@ $clipped-allowance: 100px;
         line-height: 1.2;
         @include font-size(4);
       }
-      
+
       @media (min-width: $screen-lg) {
         @include font-size(5.5);
       }
@@ -199,7 +233,7 @@ $clipped-allowance: 100px;
       margin-top: 0;
       margin-bottom: 20px;
 
-      padding: 5px 10px;
+      padding: 5px 10px 8px 10px;
       background-color: rgba(255, 255, 255, 0.1);
       @include radius(2px);
 
@@ -214,14 +248,14 @@ $clipped-allowance: 100px;
       font-weight: 300;
       font-style: normal;
       letter-spacing: 0.3px;
-      margin-top: 0;
+      margin: 20px 0px 40px 0px;
       padding-top: 0;
 
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       line-height: 22px !important;
-      font-family: sans-serif;
 
       @media (min-width: $screen-sm) {
+        margin: 10px 0px;
         font-size: 1.4rem;
         line-height: 26px !important;
       }
@@ -250,14 +284,14 @@ $clipped-allowance: 100px;
 }
 
 .header {
-  border-bottom: 1px solid $color-reddish-grey--wash;
-  @media (min-width: $screen-sm) {
+  // border-bottom: 1px solid $color-reddish-grey--wash;
+  @media (min-width: $screen-md) {
     border-bottom: 0px solid $color-reddish-grey--wash;
   }
 
   @include transition(all, ease-out, 0.2s);
   background-color: $color--white !important;
-  @media (min-width: $screen-sm) {
+  @media (min-width: $screen-md) {
     background-color: transparent !important;
   }
   z-index: 99;
@@ -268,7 +302,7 @@ $clipped-allowance: 100px;
   min-height: 74px;
   top: 0px;
   left: 0px;
-  @media (min-width: $screen-sm) {
+  @media (min-width: $screen-md) {
     background-color: transparent;
     height: $header-height;
     position: absolute;
@@ -281,7 +315,7 @@ $clipped-allowance: 100px;
   }
 
   .container {
-    @media (max-width: $screen-sm) {
+    @media (max-width: $screen-md) {
       width: 100%;
     }
   }
@@ -294,7 +328,7 @@ $clipped-allowance: 100px;
   left: 0;
   width: 100%;
   @include transition(all, ease-out, 0.2s);
-  @media (min-width: $screen-sm-min) {
+  @media (min-width: $screen-md-min) {
     left: 0 !important;
   }
 
@@ -304,22 +338,22 @@ $clipped-allowance: 100px;
 }
 
 .main {
-  @media (min-width: $screen-sm) {
+  @media (min-width: $screen-md) {
     margin-top: $header-height;
   }
   left: 0;
   position: relative;
   width: 100%;
-  min-height: 500px;
+  //min-height: 500px;
   filter: none;
 
   .section {
     min-height: 400px;
     overflow: hidden;
-    z-index: 999;
+    z-index: 999999;
     padding: 50px 0;
     position: relative;
-    @media (min-width: $screen-sm) {
+    @media (min-width: $screen-md) {
       padding: 30px 0 50px;
     }
 
@@ -353,7 +387,7 @@ $clipped-allowance: 100px;
           z-index: 99999999999;
           width: 100%;
 
-          @media (min-width: $screen-sm) {
+          @media (min-width: $screen-md) {
             width: 23vw;
           }
         }

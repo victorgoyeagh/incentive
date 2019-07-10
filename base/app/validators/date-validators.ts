@@ -8,11 +8,9 @@ export function invalidDateValidator(control: AbstractControl): { [key: string]:
     if(ctrlDay && ctrlMonth && ctrlYear){
         console.log(ctrlDay.value, ctrlMonth.value, ctrlYear.value);
 
-        //if(ctrlYear.value === 2019){
+        if(!ctrlDay.value || !ctrlMonth.value || !ctrlYear.value){
             return { 'dateIsVaild': true };
-        //} else {
-        //   return { 'dateIsVaild': true };
-        //}
+        }
     }
 }
 

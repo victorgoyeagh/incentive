@@ -1,6 +1,8 @@
+import { LoaderService } from 'app/services/loader.service';
 import { Directive, ElementRef, HostListener, Input, OnChanges, OnInit, AfterViewInit } from "@angular/core";
 import { ParallaxDirection } from "./parallax.model";
 import { IBackgroundSize } from "./parallax.model.alt";
+
 
 @Directive({
     selector: '[appParallax]'
@@ -21,7 +23,8 @@ export class ParallaxDirective implements OnInit, AfterViewInit {
     @Input() initialHeightValue: string = undefined;
     @Input() startScrollValue: number = 0;
 
-    constructor(private el: ElementRef) {
+    constructor(private el: ElementRef, 
+        private loaderService: LoaderService) {
 
         this.bgImage = <HTMLDivElement>this.el.nativeElement;
         this.bgImage.style.transition = 'all 0.1s ease-in 0';
@@ -45,17 +48,23 @@ export class ParallaxDirective implements OnInit, AfterViewInit {
         }
 
         if (this.initialHeightValue) {
-            this.bgImage.style.minHeight = this.initialHeightValue;
+            //this.bgImage.style.minHeight = this.initialHeightValue;
         }
 
         if (this.initialBgSizeValue) {
             this.bgImage.style.backgroundSize = this.initialBgSizeValue.Width + ' ' + this.initialBgSizeValue.Height;
         }
 
+
+        console.log((<any>window).outerHeight, (<any>window).innerHeight);
+        const windowHeight = (<any>window).innerHeight;
+        this.bgImage.style.height = windowHeight + 'px';
+        this.bgImage.parentElement.style.height = windowHeight + 'px';
     }
 
     ngAfterViewInit() {
 
+        this.loaderService.myObservable.next(true);
     }
 
     applyParallax(scrollTopValue: number) {

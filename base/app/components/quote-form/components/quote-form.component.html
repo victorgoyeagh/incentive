@@ -6,200 +6,242 @@
                     information provided is dealt with confidentially.</p>
             </div>
         </div>
-        <form [formGroup]="quoteForm" id="quoteForm" class="" name="quoteForm" autocomplete="true">
-            <div class="row">
-                <div class="form-group col-xs-12 col-sm-6 col-md-6">
-                    <label for="firstname">Firstname:</label>
-                    <input id="firstname" formControlName="firstname" type="text" name="firstname"
-                        class="form-control" />
-                    <div *ngIf="quoteForm.controls.firstname.invalid && (quoteForm.controls.firstname.dirty || quoteForm.controls.firstname.touched)"
-                        class="error-list">
-                        <span class="error-list__error" *ngIf="quoteForm.controls.firstname.errors.required">
-                            <small>The first name is required</small>
-                        </span>
-                    </div>
-                </div>
-                <div class="form-group col-xs-12 col-sm-6 col-md-6">
-                    <label for="surname">Surname:</label>
-                    <input id="surname" formControlName="surname" type="text" name="surname" class="form-control" />
-                    <div *ngIf="quoteForm.controls.surname.invalid && (quoteForm.controls.surname.dirty || quoteForm.controls.surname.touched)"
-                        class="error-list">
-                        <span class="error-list__error" *ngIf="quoteForm.controls.surname.errors.required">
-                            <small>The surname is required</small>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-xs-12 col-sm-6 col-md-6">
-                    <label for="email">Email:</label>
-                    <input id="email" formControlName="email" type="text" name="email" class="form-control" />
-                    <div *ngIf="quoteForm.controls.email.invalid && (quoteForm.controls.email.dirty || quoteForm.controls.email.touched)"
-                        class="error-list">
-                        <span class="error-list__error" *ngIf="quoteForm.controls.email.errors.required">
-                            <small>The email is required</small>
-                        </span>
-                    </div>
-                </div>
-                <div class="form-group col-xs-12 col-sm-6 col-md-6">
-                    <label for="phone">Telephone:</label>
-                    <input id="phone" formControlName="phone" type="text" name="phone" class="form-control" />
-                    <div *ngIf="quoteForm.controls.phone.invalid && (quoteForm.controls.phone.dirty || quoteForm.controls.phone.touched)"
-                        class="error-list">
-                        <span class="error-list__error" *ngIf="quoteForm.controls.phone.errors.required">
-                            <small>Your telephone number is required</small>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-xs-12 col-sm-6 col-md-6">
-                    <label for="company">Company:</label>
-                    <input id="company" formControlName="company" type="text" name="company" class="form-control" />
-                    <div *ngIf="quoteForm.controls.company.invalid && (quoteForm.controls.company.dirty || quoteForm.controls.company.touched)"
-                        class="error-list">
-                        <span class="error-list__error" *ngIf="quoteForm.controls.company.errors.required">
-                            <small>Your company name is required</small>
-                        </span>
-                    </div>
-                </div>
-                <div class="form-group col-xs-12 col-sm-6 col-md-6">
-                    <label for="existingUrl">Existing Url:</label>
-                    <input id="existingUrl" formControlName="existingUrl" type="text" name="existingUrl"
-                        class="form-control" />
-                    <div *ngIf="quoteForm.controls.existingUrl.invalid && (quoteForm.controls.existingUrl.dirty || quoteForm.controls.existingUrl.touched)"
-                        class="error-list">
-                        <span class="error-list__error" *ngIf="quoteForm.controls.existingUrl.errors.required">
-                            <small>Your existing url is required</small>
-                        </span>
-                    </div>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="form-group col-xs-12">
-                    <label>What services do you require?</label>
-                    <ol class="checkboxlist row">
-                        <li class="checkboxlist__item col-xs-12 col-sm-6">
-                            <div class="checkbox">
-                                <label for="tbWebDesign">
-                                    <input id="tbWebDesign" name="tbWebDesign" type="checkbox" name="web design"
-                                        formGroupName="services" value="web design"
-                                        (change)="onChange('tbWebDesign', $event.target.checked)" />
-                                    Web Design</label>
+        <div class="row">
+            <div class="col-xs-12">
+                <form [formGroup]="quoteForm" id="quoteForm" class="" name="quoteForm" autocomplete="true">
+                    <div class="row">
+                        <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                            <label for="firstname">Firstname:</label>
+                            <input id="firstname" formControlName="firstname" type="text" name="firstname"
+                                class="form-control" />
+                            <div *ngIf="quoteForm.controls.firstname.invalid && (quoteForm.controls.firstname.dirty || quoteForm.controls.firstname.touched)"
+                                class="error-list">
+                                <span class="error-list__error" *ngIf="quoteForm.controls.firstname.errors.required">
+                                    <small>The first name is required</small>
+                                </span>
+                                <span class="error-list__error" *ngIf="quoteForm.controls.surname.errors.pattern">
+                                    <small>Your first name seems to be in an incorrect format</small>
+                                </span>
                             </div>
-                        </li>
-                        <li class="checkboxlist__item col-xs-12 col-sm-6">
-                            <div class="checkbox">
-                                <label for="tbWebsiteDevelopment">
-                                    <input id="tbWebsiteDevelopment" name="tbWebsiteDevelopment" type="checkbox"
-                                        formGroupName="services" value="web development" />
-                                    Web Development</label>
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                            <label for="surname">Surname:</label>
+                            <input id="surname" formControlName="surname" type="text" name="surname"
+                                class="form-control" />
+                            <div *ngIf="quoteForm.controls.surname.invalid && (quoteForm.controls.surname.dirty || quoteForm.controls.surname.touched)"
+                                class="error-list">
+                                <span class="error-list__error" *ngIf="quoteForm.controls.surname.errors.required">
+                                    <small>The surname is required</small>
+                                </span>
+                                <span class="error-list__error" *ngIf="quoteForm.controls.surname.errors.pattern">
+                                    <small>Your surname seems to be in an incorrect format</small>
+                                </span>
                             </div>
-                        </li>
-                        <li class="checkboxlist__item col-xs-12 col-sm-6">
-                            <div class="checkbox">
-                                <label for="tbResponsiveDevelopment">
-                                    <input id="tbResponsiveDevelopment" name="tbResponsiveDevelopment" type="checkbox"
-                                        formGroupName="services" value="responsive development" />
-                                    Mobile / Responsive Development</label>
-                            </div>
-                        </li>
-                        <li class="checkboxlist__item col-xs-12 col-sm-6">
-                            <div class="checkbox">
-                                <label for="tbCms">
-                                    <input id="tbCms" name="tbCms" type="checkbox" name="Content Management System"
-                                        formGroupName="services" value="content management system" />
-                                    Content Management</label>
-                            </div>
-                        </li>
-                        <li class="checkboxlist__item col-xs-12 col-sm-6">
-                            <div class="checkbox">
-                                <label for="tbWebApplication">
-                                    <input id="tbWebApplication" name="tbWebApplication" type="checkbox" formGroupName="services" value="web application" />Web Application</label>
-                            </div>
-                        </li>
-                        <li class="checkboxlist__item col-xs-12 col-sm-6">
-                            <div class="checkbox">
-                                <label for="tbDigitalMarketing">
-                                    <input id="tbDigitalMarketing" value="digital marketing" type="checkbox" formGroupName="services" />Digital Marketing</label>
-                            </div>
-                        </li>
-                        <li class="checkboxlist__item col-xs-12 col-sm-6">
-                            <div class="checkbox">
-                                <label for="tbSocialMediaIntergration">
-                                    <input id="tbSocialMediaIntergration" value="social media" type="checkbox"
-                                        formGroupName="services" />
-                                    Social Media Intergration</label>
-                            </div>
-                        </li>
-                    </ol>
-                    <div *ngIf="quoteForm.controls.services.invalid && (quoteForm.controls.services.dirty || quoteForm.controls.services.touched)"
-                        class="error-list">
-                        <span class="error-list__error" *ngIf="quoteForm.controls.services.errors.required">
-                            <small>A service request is required</small>
-                        </span>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-xs-12">
-                    <label for="projectDesc">Briefly describe your project</label>
-                    <textarea formControlName="projectDesc" class="form-control" name="projectDesc" rows="8" cols="20"
-                        id="projectDesc"></textarea>
-                    <div *ngIf="quoteForm.controls.projectDesc.invalid && (quoteForm.controls.projectDesc.dirty || quoteForm.controls.projectDesc.touched)"
-                        class="error-list">
-                        <span class="error-list__error" *ngIf="quoteForm.controls.projectDesc.errors.required">
-                            <small>Your budget is required</small>
-                        </span>
+                    <div class="row">
+                        <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                            <label for="email">Email:</label>
+                            <input id="email" formControlName="email" type="text" name="email" class="form-control" />
+                            <div *ngIf="quoteForm.controls.email.invalid && (quoteForm.controls.email.dirty || quoteForm.controls.email.touched)"
+                                class="error-list">
+                                <span class="error-list__error" *ngIf="quoteForm.controls.email.errors.required">
+                                    <small>The email is required</small>
+                                </span>
+                                <span class="error-list__error" *ngIf="quoteForm.controls.email.errors.pattern">
+                                    <small>Enter a valid email address</small>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                            <label for="phone">Telephone:</label>
+                            <input id="phone" formControlName="phone" type="text" name="phone" class="form-control" />
+                            <div *ngIf="quoteForm.controls.phone.invalid && (quoteForm.controls.phone.dirty || quoteForm.controls.phone.touched)"
+                                class="error-list">
+                                <span class="error-list__error" *ngIf="quoteForm.controls.phone.errors.required">
+                                    <small>Your telephone number is required</small>
+                                </span>
+                                <span class="error-list__error" *ngIf="quoteForm.controls.phone.errors.pattern">
+                                    <small>Enter a valid telephone nnumber</small>
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-xs-12 col-sm-6">
-                    <label for="budget">What is your budget?</label>
-                    <select formControlName="budget" id="budget" name="budget" class="form-control">
-                        <option value="">Please select</option>
-                        <option value="£2,000 - £5,000">£2,000 - £5,000</option>
-                        <option value="£5,000 - £10,000">£5,000 - £10,000</option>
-                        <option value="£10,000 - £20,000">£10,000 - £20,000</option>
-                        <option value="£20,000 +">£20,000 +</option>
-                    </select>
-                    <div *ngIf="quoteForm.controls.budget.invalid && (quoteForm.controls.budget.dirty || quoteForm.controls.budget.touched)"
-                        class="error-list">
-                        <span class="error-list__error" *ngIf="quoteForm.controls.budget.errors.required">
-                            <small>Your budget is required</small>
-                        </span>
+                    <div class="row">
+                        <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                            <label for="company">Company:</label>
+                            <input id="company" formControlName="company" type="text" name="company"
+                                class="form-control" />
+                            <div *ngIf="quoteForm.controls.company.invalid && (quoteForm.controls.company.dirty || quoteForm.controls.company.touched)"
+                                class="error-list">
+                                <span class="error-list__error" *ngIf="quoteForm.controls.company.errors.required">
+                                    <small>Your company name is required</small>
+                                </span>
+                                <span class="error-list__error" *ngIf="quoteForm.controls.company.errors.pattern">
+                                    <small>Your company seems to be in an incorrect format</small>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                            <label for="existingUrl">Current Url:</label>
+                            <input id="existingUrl" formControlName="existingUrl" type="text" name="existingUrl"
+                                class="form-control" />
+                            <div *ngIf="quoteForm.controls.existingUrl.invalid && (quoteForm.controls.existingUrl.dirty || quoteForm.controls.existingUrl.touched)"
+                                class="error-list">
+                                <span class="error-list__error" *ngIf="quoteForm.controls.existingUrl.errors.required">
+                                    <small>Your existing url is required</small>
+                                </span>
+                                <span class="error-list__error" *ngIf="quoteForm.controls.existingUrl.errors.pattern">
+                                    <small>Your website address format seems to be invalid</small>
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group col-xs-12 col-sm-6">
-                    <label for="deadline">Do you have a deadline?</label>
-                    <select formControlName="deadline" id="deadline" name="deadline" class="form-control">
-                        <option value="">Please select</option>
-                        <option value="Less than 3 months">Less than 3 months</option>
-                        <option value="3-6 months">3-6 months</option>
-                        <option value="Over 6 months">Over 6 months</option>
-                        <option value="No deadline date">No deadline date</option>
-                    </select>
-                    <div *ngIf="quoteForm.controls.deadline.invalid && (quoteForm.controls.deadline.dirty || quoteForm.controls.deadline.touched)"
-                        class="error-list">
-                        <span class="error-list__error" *ngIf="quoteForm.controls.deadline.errors.required">
-                            <small>Your deadline is required</small>
-                        </span>
+
+                    <div class="row">
+                        <div class="form-group col-xs-12">
+                            <label>What services do you require?</label>
+                            <ol class="checkboxlist row">
+                                <li class="checkboxlist__item col-xs-12 col-sm-6">
+                                    <div class="pretty p-default p-curve p-thick">
+                                        <input (change)="updateCheckboxes('Web Design', $event)" type="checkbox"
+                                            id="tbWebDesign" name="tbWebDesign" />
+                                        <div class="state turquoise">
+                                            <label>Application Design</label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="checkboxlist__item col-xs-12 col-sm-6">
+                                    <div class="pretty p-default p-curve p-thick">
+                                        <input (change)="updateCheckboxes('Web Development', $event)" type="checkbox"
+                                            id="tbWebDevelopment" name="tbWebDevelopment" />
+                                        <div class="state">
+                                            <label>Web Development</label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="checkboxlist__item col-xs-12 col-sm-6">
+                                    <div class="pretty p-default p-curve p-thick">
+                                        <input (change)="updateCheckboxes('Mobile Responsive Development', $event)"
+                                            type="checkbox" id="tbMobileResponsiveDevelopment"
+                                            name="tbMobileResponsiveDevelopment" />
+                                        <div class="state">
+                                            <label>Mobile / Responsive Development</label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="checkboxlist__item col-xs-12 col-sm-6">
+                                    <div class="pretty p-default p-curve p-thick">
+                                        <input (change)="updateCheckboxes('Content Management', $event)" type="checkbox"
+                                            id="tbContentManagement" name="ContentManagement" />
+                                        <div class="state">
+                                            <label>Content Management</label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="checkboxlist__item col-xs-12 col-sm-6">
+                                    <div class="pretty p-default p-curve p-thick">
+                                        <input (change)="updateCheckboxes('Web Application', $event)" type="checkbox"
+                                            id="tbWebApplication" name="tbWebApplication" />
+                                        <div class="state">
+                                            <label>Web Application</label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="checkboxlist__item col-xs-12 col-sm-6">
+                                    <div class="pretty p-default p-curve p-thick">
+                                        <input (change)="updateCheckboxes('Digital Marketing', $event)" type="checkbox"
+                                            id="tbDigitalMarketing" name="tbDigitalMarketing" />
+                                        <div class="state">
+                                            <label>Digital Marketing</label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="checkboxlist__item col-xs-12 col-sm-6">
+                                    <div class="pretty p-default p-curve p-thick">
+                                        <input (change)="updateCheckboxes('Digital Marketing', $event)" type="checkbox"
+                                            id="tbSocialMediaIntergration" name="Social Media Intergration" />
+                                        <div class="state">
+                                            <label>Social Media Intergration</label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ol>
+                            <div *ngIf="quoteForm.errors?.servicesRequired" class="error-list">
+                                <span class="error-list__error">
+                                    <small>A service request is required</small>
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="checkbox col-xs-12 text-center">
-                    <label><input formControlName="newsletter" type="checkbox">I'd like to recieve monthly news
-                        updates</label>
-                </div>
-            </div>
+                    <div class="row">
+                        <div class="form-group col-xs-12">
+                            <label for="projectDesc">Briefly describe your project</label>
+                            <textarea formControlName="projectDesc" class="form-control" name="projectDesc" rows="8"
+                                cols="20" id="projectDesc"></textarea>
+                            <div *ngIf="quoteForm.controls.projectDesc.invalid && (quoteForm.controls.projectDesc.dirty || quoteForm.controls.projectDesc.touched)"
+                                class="error-list">
+                                <span class="error-list__error" *ngIf="quoteForm.controls.projectDesc.errors.required">
+                                    <small>Your budget is required</small>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-xs-12 col-sm-6">
+                            <label for="budget">What is your budget?</label>
+                            <select formControlName="budget" id="budget" name="budget" class="form-control">
+                                <option value="">Please select</option>
+                                <option value="£2,000 - £5,000">£2,000 - £5,000</option>
+                                <option value="£5,000 - £10,000">£5,000 - £10,000</option>
+                                <option value="£10,000 - £20,000">£10,000 - £20,000</option>
+                                <option value="£20,000 +">£20,000 +</option>
+                            </select>
+                            <div *ngIf="quoteForm.controls.budget.invalid && (quoteForm.controls.budget.dirty || quoteForm.controls.budget.touched)"
+                                class="error-list">
+                                <span class="error-list__error" *ngIf="quoteForm.controls.budget.errors.required">
+                                    <small>Your budget is required</small>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-6">
+                            <label for="deadline">Do you have a deadline?</label>
+                            <select formControlName="deadline" id="deadline" name="deadline" class="form-control">
+                                <option value="">Please select</option>
+                                <option value="Less than 3 months">Less than 3 months</option>
+                                <option value="3-6 months">3-6 months</option>
+                                <option value="Over 6 months">Over 6 months</option>
+                                <option value="No deadline date">No deadline date</option>
+                            </select>
+                            <div *ngIf="quoteForm.controls.deadline.invalid && (quoteForm.controls.deadline.dirty || quoteForm.controls.deadline.touched)"
+                                class="error-list">
+                                <span class="error-list__error" *ngIf="quoteForm.controls.deadline.errors.required">
+                                    <small>Your deadline is required</small>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <div class="pretty p-default p-curve p-thick newsletter">
+                                <input  formControlName="newsletter" type="checkbox"
+                                    id="tbNewsletter" name="tbNewsletter" />
+                                <div class="state">
+                                    <label>I'd like to recieve monthly news
+                                            updates</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--
             <div class="row">
                 <div class="col-xs-12 text-center">
                     <button type="submit" class="btn btn-default" (click)="sendForm()">Send</button>
                 </div>
+            </div>-->
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 </div>

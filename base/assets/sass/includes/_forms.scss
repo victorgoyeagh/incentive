@@ -39,5 +39,15 @@
 .error-list {
   &__error {
     color: red;
+    small {
+      font-size: 0.8em;
+    }
   }
+}
+
+.pretty {
+    width: 100%;
+    &.newsletter {
+        width: auto;
+    }
 }

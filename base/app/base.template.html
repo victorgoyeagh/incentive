@@ -1,5 +1,3 @@
-
-
 <div id="main">
     <a href="#navigation" class="sr-only" role="navigation">Skip navigation</a>
 
@@ -20,13 +18,14 @@
                         <a class="navbar-brand" href="http://incentive.com"></a>
                     </div>
                     <div id="toggleNav" class="navbar-collapse collapse">
+                        <div class="logo-nav"></div>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown dropdown--fullwidth">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                    aria-expanded="false">Services
+                                <a href="#" class="dropdown-toggle" data-dropdown-trigger="services"
+                                    data-toggle="dropdown" role="button" aria-expanded="false">Services
                                     <i class="fa fa-angle-down" aria-hidden="true"></i>
                                 </a>
-                                <div class="dropdown-menu" role="menu">
+                                <div class="dropdown-menu" id="ddServices" data-dropdown="services" role="menu">
                                     <div class="dropdown-cont">
 
                                         <div class="row">
@@ -48,7 +47,7 @@
                                         <hr />
                                         <ul class="list-unstyled col-xs-12 col-sm-6 col-md-6">
                                             <li>
-                                                <p><a href="#" title="">Link First Link</a></p>
+                                                <a href="#" title="">Link First Link</a>
                                             </li>
                                             <li>
                                                 <a href="#" title="">Link One</a>
@@ -140,64 +139,136 @@
         </div>
     </header>
     <div id="toggleMain" class="toggleMain">
-        
+
         <main>
             <div class="main">
-                <!--
-                <div class="banner-bg" [parallaxSpeed]="2.5" [parallaxTopDirection]="ParallaxDirection.Up"
+
+                <!--      <div class="banner-bg" [parallaxSpeed]="2.5" [parallaxTopDirection]="ParallaxDirection.Up"
                     [initialBgImage]="'/assets/images/default/7.jpg'" appParallax>
-                </div>
-                -->
-       
-                <div class="container-fluid container-fluid__banner">
-                    <!--<div class="banner-bottom"></div>-->
-                    <section class="banner">
-                        
-                            <div class="lft">
-                                <div class="banner-header">
-                                    <h5>Creative app solutions for SME<span>s</span>
-                                    </h5>
-                                    <h1>Intuitive web and<br /> mobile applications.</h1>
-                                    <h2 class="sub-heading">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu lorem
-                                        id elit faucibus placerat. Nulla euismod semper imperdiet.
-                                        Aenean tempus ante id neque condimentum, a cursus justo ullamcorper.
-                                    </h2>
-                                    <ul class="row list-inline banner-buttons">
-                                        <li class="col-xs-6"> 
-                                            <button class="btn btn-default btn-sml">Learn More <i class="fa fa-angle-right" aria-hidden="true"></i></button>
-                                        </li>
-                                        <li class="col-xs-6">
-                                            <button class="btn btn-default btn-sml btn-brand">Get in touch <i class="fa fa-angle-right" aria-hidden="true"></i></button>
-                                        </li>
-                                    </ul>
+                    <div class="lft">
+                            <div class="banner-header">
+                                <h5>Creative app solutions for SME<span>s</span>
+                                </h5>
+                                <h1>Intuitive web and mobile applications.</h1>
+                                <h2 class="sub-heading">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu lorem
+                                    id elit faucibus placerat. Nulla euismod semper imperdiet.
+                                    Aenean tempus ante id neque condimentum, a cursus justo ullamcorper.
+                                </h2>
+                                <ul class="row list-inline banner-buttons">
+                                    <li class="col-xs-6"> 
+                                        <button class="btn btn-default btn-sml">Learn More <i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                                    </li>
+                                    <li class="col-xs-6">
+                                        <button class="btn btn-default btn-sml btn-brand">Get in touch <i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                </div> -->
+
+                <div id="banner-container" #bannerContainer class="container-fluid container-fluid__banner"
+                    #containerBanner>
+
+
+                    <div class="banner-bg" [parallaxSpeed]="3" [parallaxTopDirection]="ParallaxDirection.Down"
+                        [initialBgImage]="'/assets/images/default/117a.jpg'" appParallax></div>
+                    <div class="lft">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <section class="banner">
+                                        <div class="lft">
+                                            <div class="banner-header">
+                                                <h5>Creative app solutions for SME<span>s</span>
+                                                </h5>
+                                                <h1>Intuitive web and mobile applications.</h1>
+                                                <h2 class="sub-heading">
+                                                    We craft user-centric, web and mobile applications, that combine
+                                                    great user experiences, with a combination of incentives and
+                                                    provisions, arousing user interaction; assisting fluid navigation
+                                                    towards one's desired goaIs, enhancing productivity. 
+                                                </h2>
+                                                <ul class="row list-inline banner-buttons">
+                                                    <li class="col-xs-6">
+                                                        <button class="btn btn-default btn-sml">Learn More <i
+                                                                class="fa fa-angle-right"
+                                                                aria-hidden="true"></i></button>
+                                                    </li>
+                                                    <li class="col-xs-6">
+                                                        <button class="btn btn-default btn-sml btn-brand">Get in touch
+                                                            <i class="fa fa-angle-right"
+                                                                aria-hidden="true"></i></button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="rgt">
+                                            <div class="main-image">
+                                                <img src="/assets/images/default/6-dashboard.png" alt="" />
+                                            </div>
+                                        </div>-->
+                                    </section>
                                 </div>
                             </div>
+                        </div>
+                    </div>
 
-                            <div class="col-xs-12 col-sm-6 rgt">
-                                <!--<div class="main-image">
-                                    <img src="/assets/images/default/conseris-app.png" alt="" />
-                                </div>-->
-                            </div>
-
-                    </section>
                 </div>
-
+                <!--
+                <app-intro></app-intro>
                 
-                <section class="section">
-                    <div class="container-fluid">
-                        <app-date-field></app-date-field>
-                    </div>
-                </section>
+                <section class="section grey overlay-image blue-bg">
 
-                <section class="section">
-                    <div class="container-fluid">
-                        <h3>Quote Form<span></span></h3>
-                        <app-quote-form></app-quote-form>
-                    </div>
-                </section>
-
-                <section class="section">
+                        <div class="container-fluid">
+    
+                            <div class="row">
+    
+                                <div class="col-xs-12 col-sm-12 col-md-10">
+    
+                                    <h4 class="intro-header">Tech Cloud</h4>
+                                    <div class="row">
+    
+                                        <div class="col-xs-12 col-sm-6 text-left">
+                                            <h4>Praesent rhoncus malesuada dapibus. </h4>
+                                            <p> In hac habitasse platea dictumst. Curabitur et auctor nibh, in
+                                                lobortis nisl. Quisque semper vitae urna eget tincidunt. Vivamus ac
+                                                purus felis.</p>
+                                            <p> In hac habitasse platea dictumst. Curabitur et auctor nibh, in
+                                                lobortis nisl. Quisque semper vitae urna eget tincidunt. Vivamus ac
+                                                purus felis.</p>
+    
+                                            <button class="btn btn-default">Read more
+                                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 text-left">
+                                            <h4>Praesent rhoncus malesuada dapibus. </h4>
+                                            <p> In hac habitasse platea dictumst. Curabitur et auctor nibh, in
+                                                lobortis nisl. Quisque semper vitae urna eget tincidunt. Vivamus ac
+                                                purus felis.</p>
+                                            <p> In hac habitasse platea dictumst. Curabitur et auctor nibh, in
+                                                lobortis nisl. Quisque semper vitae urna eget tincidunt. Vivamus ac
+                                                purus felis.</p>
+    
+                                            <button class="btn btn-default">Read more
+                                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                <div class="col-xs-12 col-sm-2 hidden-sm hidden-xs">
+                                    <div class="image">
+                                        <img src="./../assets/images/default/cloud_diagram_complete.svg" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+-->
+                <section class="section overlay-image blue-bg">
                     <div class="container-fluid">
                         <div class="row">
 
@@ -233,55 +304,6 @@
                     </div>
                 </section>
 
-                <section class="section grey overlay-image blue-bg">
-
-                    <div class="container-fluid">
-
-                        <div class="row">
-
-                            <div class="col-xs-12 col-sm-12 col-md-10">
-
-                                <h4 class="intro-header">Tech Cloud</h4>
-                                <div class="row">
-
-                                    <div class="col-xs-12 col-sm-6 text-left">
-                                        <h4>Praesent rhoncus malesuada dapibus. </h4>
-                                        <p> In hac habitasse platea dictumst. Curabitur et auctor nibh, in
-                                            lobortis nisl. Quisque semper vitae urna eget tincidunt. Vivamus ac
-                                            purus felis.</p>
-                                        <p> In hac habitasse platea dictumst. Curabitur et auctor nibh, in
-                                            lobortis nisl. Quisque semper vitae urna eget tincidunt. Vivamus ac
-                                            purus felis.</p>
-
-                                        <button class="btn btn-default">Read more
-                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 text-left">
-                                        <h4>Praesent rhoncus malesuada dapibus. </h4>
-                                        <p> In hac habitasse platea dictumst. Curabitur et auctor nibh, in
-                                            lobortis nisl. Quisque semper vitae urna eget tincidunt. Vivamus ac
-                                            purus felis.</p>
-                                        <p> In hac habitasse platea dictumst. Curabitur et auctor nibh, in
-                                            lobortis nisl. Quisque semper vitae urna eget tincidunt. Vivamus ac
-                                            purus felis.</p>
-
-                                        <button class="btn btn-default">Read more
-                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-xs-12 col-sm-2 hidden-sm hidden-xs">
-                                <div class="image">
-                                    <img src="./../assets/images/default/cloud_diagram_complete.svg" alt="" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
                 <section class="section">
                     <div class="container-fluid">
 
@@ -308,7 +330,7 @@
 
             </div>
         </main>
-        
+
         <footer>
 
             <section class="footer">

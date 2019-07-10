@@ -1,5 +1,3 @@
-import { DateFieldComponent } from './components/date-field/date-field.component';
-import { CalendarComponent } from './components/calendar/calendar.component';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 /* angular */
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,12 +7,9 @@ import { HttpModule } from '@angular/http';
 import { CommonModule } from "@angular/common";
 
 /* third_party */
-import { TooltipModule } from "ngx-tooltip";
 import { NgRedux, NgReduxModule } from 'ng2-redux';
 import { Ng2Bs3ModalModule, ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
 import { RootReducer, appInitialState } from './state/state.store'; 
-import { SimpleNotificationsModule, PushNotificationsModule } from 'angular2-notifications';
-import { FileUploadModule, FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
 import { Reducer } from 'redux';
 
 /* third_party_material */
@@ -38,13 +33,15 @@ import { ParallaxDirective } from './directives/parallax.directive';
 import { ContactFormModule } from './components/contact-form/contact-form.module';
 import { QuoteFormModule } from './components/quote-form/quote-form.module';
 import { HttpInterceptorService } from './services/httpinterceptor.service';
+import { IntroComponent } from './components/intro/intro.component';
+import { LoaderService } from './services/loader.service';
+
 
 
 
 @NgModule({
     declarations: [
-        DateFieldComponent,
-        CalendarComponent,
+        IntroComponent,
         BaseComponent,
         HomeComponent,
         HeaderComponent,
@@ -66,13 +63,11 @@ import { HttpInterceptorService } from './services/httpinterceptor.service';
         HttpModule,
         Routing,
         NgReduxModule,
-        TooltipModule,
-        SimpleNotificationsModule.forRoot(),
         Ng2Bs3ModalModule,
-        FileUploadModule, 
         BrowserAnimationsModule
     ],
     providers: [
+        LoaderService,
         { 
             provide: HTTP_INTERCEPTORS,
             useClass: HttpInterceptorService, multi: true 
