@@ -20,9 +20,8 @@ import { Routing } from './routers/routing.route';
 import { HomeComponent } from './views/home.view';
 import { MainComponent } from './views/main.view';
 import { BaseComponent } from './base.component';
-import { FooterComponent } from './components/shared/footer.component';
-import { HeaderComponent } from './components/shared/header.component';
-import { NavigationComponent } from './components/shared/navigation.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 import { ModalOverlayComponent } from './components/modal/modal.component';
 
 /* services */
@@ -39,14 +38,15 @@ import { LoaderService } from './services/loader.service';
 
 
 
+
 @NgModule({
     declarations: [
+        HeaderComponent,
         IntroComponent,
         BaseComponent,
         HomeComponent,
         HeaderComponent,
         FooterComponent,
-        NavigationComponent,
         MainComponent,
         ModalOverlayComponent,
         ParallaxDirective

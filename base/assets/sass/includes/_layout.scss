@@ -112,18 +112,15 @@ $clipped-allowance: 100px;
   }
   min-height: 650px;
   z-index: 1;
-  //filter:brightness(40%) blur(10px);// brightness(40%);
-  //transform: scaleX(-1);
-  //min-height: $banner-min-height;
   width: 100%;
   position: absolute;
   top: 0;
 
-  // background-position: center center;
   background-position: bottom left;
   background-repeat: no-repeat;
   background-size: cover;
   //transition : top 0.1s ease-out, bottom 0.1s ease-in;
+  @include brightness(30%);
 
   video {
     width: 100%;
@@ -133,7 +130,6 @@ $clipped-allowance: 100px;
 
 .banner-bg-alt {
   z-index: 99;
-  //min-height: $banner-min-height;
   width: 100%;
   position: absolute;
   top: 0;
@@ -148,13 +144,8 @@ $clipped-allowance: 100px;
   z-index: 9999;
   position: relative;
   background: cornflowerblue;
-  //@include gradient($color-banner-from, $color-banner-to);
-  //display: table;
   width: 100%;
-  //min-height: $banner-min-height;
-  //min-height: $banner-min-height;
   background-color: transparent;
-  //border: 1px solid $color--white;
 
   .banner-buttons {
     margin: 0px;
@@ -166,6 +157,7 @@ $clipped-allowance: 100px;
     margin-top: 16px;
 
     li {
+        text-align: left;
       padding-left: 0px !important;
     }
   }
@@ -180,29 +172,18 @@ $clipped-allowance: 100px;
   }
 
   .banner-header {
-    //padding-top: 150px; //180px;
-    //padding-right: 24%;
-    //padding-right: 36%;
     max-width: 610px;
     display: table-cell;
     text-align: center;
     vertical-align: middle;
-    /*@media (min-width: $screen-sm) {
-      padding: -1px 33% 0 9%;
-    }
-    @media (min-width: $screen-md) {
-      padding: 0 46% 0 10%;
-    }
-    @media (min-width: $screen-lg) {
-      padding: 0 40% 0 10%;
-    }*/
 
     h1 {
+        text-shadow: 1px 2px 1px black;
       margin-top: 0;
       text-align: left;
       color: $color--white;
       margin-bottom: 10px;
-      @include font-size(3.8);
+      @include font-size(4.8);
       font-weight: bold;
       line-height: 1.1;
 
@@ -243,6 +224,7 @@ $clipped-allowance: 100px;
     }
 
     .sub-heading {
+        font-family: $font-san-serif;
       color: $color--white;
       text-align: left;
       font-weight: 300;
@@ -290,7 +272,7 @@ $clipped-allowance: 100px;
   }
 
   @include transition(all, ease-out, 0.2s);
-  background-color: $color--white !important;
+  // background-color: $color--white !important;
   @media (min-width: $screen-md) {
     background-color: transparent !important;
   }
