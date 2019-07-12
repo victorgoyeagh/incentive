@@ -42,15 +42,13 @@ export class ContactFormComponent implements OnInit {
     }
 
     sendForm() {
-        let formIsValid = this.contactForm.valid,
-            _self = this;
-
+        let formIsValid = this.contactForm.valid;
         if (!formIsValid) {
             for (let i in this.contactForm.controls) {
                 this.contactForm.controls[i].markAsTouched();
             }
         } else {
-
+            // send form
         }
     }
 
