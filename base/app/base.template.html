@@ -2,142 +2,7 @@
     <a href="#navigation" class="sr-only" role="navigation">Skip navigation</a>
 
     <a href="#navigation" class="sr-only">Skip navigation</a>
-    <header>
-        <div class="header">
-            <div class="container-fluid container-fluid__header">
-
-                <nav class="navbar">
-                    <div id="toggleHeader" class="navbar-header">
-                        <button id="toggleBtn" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                            data-target="#navbar1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="http://incentive.com"></a>
-                    </div>
-                    <div id="toggleNav" class="navbar-collapse collapse">
-                        <div class="logo-nav"></div>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown dropdown--fullwidth">
-                                <a href="#" class="dropdown-toggle" data-dropdown-trigger="services"
-                                    data-toggle="dropdown" role="button" aria-expanded="false">Services
-                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                </a>
-                                <div class="dropdown-menu" id="ddServices" data-dropdown="services" role="menu">
-                                    <div class="dropdown-cont">
-
-                                        <div class="row">
-                                            <div class="col-xs-12 col-sm-9">
-                                                <h4>Menu Heading</h4>
-                                                <p>An incentive is something that motivates an individual to perform an
-                                                    action. Non auctor
-                                                    odio convallis sit amet. Curabitur tempus pulvinar urna, id cursus
-                                                    purus ultrices quis. Integer ut mattis leo.</p>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-3">
-                                                <button class="btn btn-default sml">
-                                                    Learn more <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-
-
-                                        <hr />
-                                        <ul class="list-unstyled col-xs-12 col-sm-6 col-md-6">
-                                            <li>
-                                                <a href="#" title="">Link First Link</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" title="">Link One</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" title="">Link One</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" title="">Link One</a>
-                                            </li>
-                                        </ul>
-                                        <ul class="list-unstyled col-xs-12 col-sm-6 col-md-6">
-                                            <li>
-                                                <a href="#" title="">Link One</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" title="">Link One</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" title="">Link One</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" title="">Link One</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="dropdown dropdown--fullwidth">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                    aria-expanded="false">Work
-                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                </a>
-                                <div class="dropdown-menu" role="menu">
-                                    <div class="dropdown-cont">
-
-                                        <ul class="list-unstyled col-xs-12 col-sm-6 col-md-6">
-                                            <li>
-                                                <a href="#" title="">Link First Link</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" title="">Link One</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" title="">Link One</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" title="">Link One</a>
-                                            </li>
-                                        </ul>
-                                        <ul class="list-unstyled col-xs-12 col-sm-6 col-md-6">
-                                            <li>
-                                                <a href="#" title="">Link One</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" title="">Link One</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" title="">Link One</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" title="">Link One</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#">Blog</a>
-                            </li>
-                            <li>
-                                <a href="#">Who we are</a>
-                            </li>
-                            <li>
-                                <ul class="list-unstyled list-inline">
-                                    <li>
-                                        <button class="btn btn-default cta" (click)="requestQuoteForm()">
-                                            Request a Quote
-                                        </button>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                    </div>
-                </nav>
-
-            </div>
-        </div>
-    </header>
+    <app-header></app-header>
     <div id="toggleMain" class="toggleMain">
 
         <main>
@@ -172,10 +37,10 @@
 
 
                     <div class="banner-bg" [parallaxSpeed]="3" [parallaxTopDirection]="ParallaxDirection.Down"
-                        [initialBgImage]="'/assets/images/default/304.jpg'" appParallax></div>
+                        [initialBgImage]="'/assets/images/default/114.jpg'" appParallax></div>
                     <div class="lft">
 
-                        <div class="container">
+                        <div class="container-fluid container-fluid__header">
                             <div class="row">
                                 <div class="col-xs-12">
                                     <section class="banner">
@@ -183,20 +48,18 @@
                                             <div class="banner-header">
                                                 <h5>Creative app solutions for SME<span>s</span>
                                                 </h5>
-                                                <h1>Intuitive web and mobile applications.</h1>
+                                                <h1>Intuitive web &amp; mobile applications.</h1>
                                                 <h2 class="sub-heading">
-                                                    We craft user-centric, web and mobile applications, that combine
+                                                    We craft user-centric, responsive web applications, that combine
                                                     great user experiences, with a combination of incentives and
-                                                    provisions, arousing user interaction; assisting fluid navigation
-                                                    towards one's desired goaIs, enhancing productivity. 
+                                                    provisions; arousing user interaction, assisting fluid navigation
+                                                    towards one's desired goals, enhancing productivity. 
                                                 </h2>
                                                 <ul class="row list-inline banner-buttons">
-                                                    <li class="col-xs-6">
+                                                    <li class="col-xs-12 text-left">
                                                         <button class="btn btn-default btn-sml">Learn More <i
                                                                 class="fa fa-angle-right"
                                                                 aria-hidden="true"></i></button>
-                                                    </li>
-                                                    <li class="col-xs-6">
                                                         <button class="btn btn-default btn-sml btn-brand">Get in touch
                                                             <i class="fa fa-angle-right"
                                                                 aria-hidden="true"></i></button>
@@ -216,58 +79,7 @@
                     </div>
 
                 </div>
-                <!--
-                <app-intro></app-intro>
                 
-                <section class="section grey overlay-image blue-bg">
-
-                        <div class="container-fluid">
-    
-                            <div class="row">
-    
-                                <div class="col-xs-12 col-sm-12 col-md-10">
-    
-                                    <h4 class="intro-header">Tech Cloud</h4>
-                                    <div class="row">
-    
-                                        <div class="col-xs-12 col-sm-6 text-left">
-                                            <h4>Praesent rhoncus malesuada dapibus. </h4>
-                                            <p> In hac habitasse platea dictumst. Curabitur et auctor nibh, in
-                                                lobortis nisl. Quisque semper vitae urna eget tincidunt. Vivamus ac
-                                                purus felis.</p>
-                                            <p> In hac habitasse platea dictumst. Curabitur et auctor nibh, in
-                                                lobortis nisl. Quisque semper vitae urna eget tincidunt. Vivamus ac
-                                                purus felis.</p>
-    
-                                            <button class="btn btn-default">Read more
-                                                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-6 text-left">
-                                            <h4>Praesent rhoncus malesuada dapibus. </h4>
-                                            <p> In hac habitasse platea dictumst. Curabitur et auctor nibh, in
-                                                lobortis nisl. Quisque semper vitae urna eget tincidunt. Vivamus ac
-                                                purus felis.</p>
-                                            <p> In hac habitasse platea dictumst. Curabitur et auctor nibh, in
-                                                lobortis nisl. Quisque semper vitae urna eget tincidunt. Vivamus ac
-                                                purus felis.</p>
-    
-                                            <button class="btn btn-default">Read more
-                                                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-    
-                                </div>
-                                <div class="col-xs-12 col-sm-2 hidden-sm hidden-xs">
-                                    <div class="image">
-                                        <img src="./../assets/images/default/cloud_diagram_complete.svg" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
--->
                 <section class="section overlay-image blue-bg">
                     <div class="container-fluid">
                         <div class="row">
@@ -282,16 +94,13 @@
                                     </div>
                                     <div class="col-xs-12 col-sm-6 col-md-7">
 
-                                        <h4>Praesent rhoncus malesuada dapibus. </h4>
+                                        <h4>Transform your company’s data.</h4>
                                         <p class="intro-text">
-                                            In hac habitasse platea dictumst. Curabitur et auctor nibh.
-                                            <br />
-                                            In lobortis nisl. Quisque semper vitae urna eget tincidunt. Vivamus
-                                            ac
-                                            purus felis.
-                                            In tristique aliquet ultrices. In viverra venenatis accumsan.
-                                            Integer
-                                            tempor imperdiet viverra.
+                                            Transform your company’s data, from its current form to manageable,
+                                            summarised, human readable illustrations; providing detailed however clear insights into
+                                            projects and business performance. Interactivity tailored to your company's
+                                            workflow; complex operations are untangled becoming transparent, enabling
+                                            key business decisions that lead to success.
                                         </p>
 
                                         <button class="btn btn-default btn-brand">Read more
@@ -330,77 +139,7 @@
 
             </div>
         </main>
-
-        <footer>
-
-            <section class="footer">
-                <div class="container-fluid">
-
-                    <div class="row">
-
-                        <div class="col-xs-12 col-sm-7 col-sm-push-5 col-md-7">
-                            <div class="row">
-
-                                <div class="col-xs-6 col-sm-6 col-md-8 xs-alt">
-
-                                    <h6>Services</h6>
-                                    <ul class="list-unstyled">
-                                        <li>Dashboard &amp; Analytics</li>
-                                        <li>Intelligent API</li>
-                                        <li>Responsive/Hybrid applications</li>
-                                        <li>Content Management Systems</li>
-                                        <li>E-Commerce/Shopping Cart</li>
-                                        <li>Collaboration applications</li>
-                                        <li>Interactive event presentations</li>
-                                        <li>Blog/Forums integration</li>
-                                    </ul>
-
-                                </div>
-
-                                <div class="col-xs-6 col-sm-6 col-md-4 xs-alt">
-
-                                    <h6>Learn more</h6>
-                                    <ul class="list-unstyled">
-                                        <li>Work</li>
-                                        <li>Blog</li>
-                                        <li>Meet the Team</li>
-                                        <li>Process</li>
-                                        <li>Technology</li>
-                                        <li>Testimonials</li>
-                                        <li>Get in touch</li>
-                                    </ul>
-
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="col-xs-12 col-sm-5 col-sm-pull-7 col-md-5">
-
-                            <p *ngIf="currentYear">&copy; {{ this.currentYear }} Incentive Apps Limited by DejiMeji</p>
-
-                            <ul class="list-unstyled social-links">
-                                <li><a href="#" target="_blank" title="facebook"><i
-                                            class="fa fa-facebook-square"></i></a></li>
-                                <li><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter-square"></i></a>
-                                </li>
-                                <li><a href="#" target="_blank" title="google plus"><i
-                                            class="fa fa-google-plus-square"></i></a></li>
-                                <li><a href="#" target="_blank" title="linked in"><i
-                                            class="fa fa-linkedin-square"></i></a></li>
-                            </ul>
-
-                            <p>101 Greyguild Street, Gattin Close, Pavilion Way, HA1 9RU.</p>
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-            </section>
-
-        </footer>
+        <app-footer></app-footer>
     </div>
 </div>
 
