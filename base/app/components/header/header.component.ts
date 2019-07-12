@@ -1,3 +1,5 @@
+import { CommunicationService } from 'app/services/communication.service';
+import { ModalInfo, ModalCommand, ModalType, ModalFormType, ModalLocation } from './../../entities/modal.entity';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _communicationService: CommunicationService
+  ) { }
 
   ngOnInit() {
   }
 
+  requestQuoteForm() {
+
+    let modalInfo: ModalInfo = new ModalInfo(
+        `Request quote`,
+        ``,
+        ModalCommand.Open,
+        ModalType.Alert,
+        "OK",
+        "",
+        null,
+        ModalFormType.QuoteRequestForm,
+        "bookmarkModal",
+        {
+            Width: '100%',
+            Height: '100%'
+        },
+        ModalLocation.Center
+    );
+
+    this._communicationService.ShareModalInfoData(modalInfo);
+
+}
 }

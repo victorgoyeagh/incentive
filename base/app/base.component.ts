@@ -45,29 +45,6 @@ export class BaseComponent implements OnInit, AfterViewInit, AfterViewChecked {
     ngAfterViewChecked() {
     }
 
-    requestQuoteForm() {
-
-        let modalInfo: ModalInfo = new ModalInfo(
-            `Request quote`,
-            ``,
-            ModalCommand.Open,
-            ModalType.Alert,
-            "OK",
-            "",
-            null,
-            ModalFormType.QuoteRequestForm,
-            "bookmarkModal",
-            {
-                Width: '100%',
-                Height: '100%'
-            },
-            ModalLocation.Center
-        );
-
-        this._communicationService.ShareModalInfoData(modalInfo);
-
-    }
-
     logSelectedDate(event: any) {
         console.log(event)
     }

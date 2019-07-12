@@ -112,7 +112,11 @@ $nav-divider: #bdeae6;
     }
   }
   .navbar-collapse {
-    overflow-x: hidden !important;
+    overflow: hidden;
+    overflow-y: auto !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    // overflow: scroll !important;
 
     h1,
     h2,
@@ -139,10 +143,6 @@ $nav-divider: #bdeae6;
         display: none;
       }
     }
-
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-    overflow: scroll !important;
  
     @media (min-width: $screen-md) {
       overflow: hidden !important;
@@ -204,7 +204,7 @@ $nav-divider: #bdeae6;
             @include font-size(1.4);
             padding: 10px 15px;
             border-bottom: 0px solid $color-turquoise;
-            padding-top: 8px;
+            padding-top: 11px;
             padding-bottom: 8px;
           }
 

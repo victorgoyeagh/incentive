@@ -23,8 +23,6 @@ export class PanelCtrl {
         _self.panel = panel;
 
         _self.SetPanelHeight();
-        //console.log( _self.panel);
-
         this.classHelper = new ClassHelper(this.panel);
     }
 

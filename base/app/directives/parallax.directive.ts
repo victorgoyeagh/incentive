@@ -55,15 +55,18 @@ export class ParallaxDirective implements OnInit, AfterViewInit {
             this.bgImage.style.backgroundSize = this.initialBgSizeValue.Width + ' ' + this.initialBgSizeValue.Height;
         }
 
-
         console.log((<any>window).outerHeight, (<any>window).innerHeight);
         const windowHeight = (<any>window).innerHeight;
         this.bgImage.style.height = windowHeight + 'px';
         this.bgImage.parentElement.style.height = windowHeight + 'px';
+
+        const bannerHeaderOutter = <HTMLDivElement>document.getElementById('banner-header-outter');
+        if (bannerHeaderOutter) { 
+            bannerHeaderOutter.style.height = windowHeight + 'px';
+        }
     }
 
     ngAfterViewInit() {
-
         this.loaderService.myObservable.next(true);
     }
 
