@@ -16,7 +16,7 @@ export class ParallaxDirective implements OnInit, AfterViewInit {
 
     @Input() parallaxTopDirection: ParallaxDirection;
     @Input() parallaxSpeed: number;
-    @Input() initialBgImage: string = undefined;
+    @Input() initialBgImage: string[] = undefined;
     @Input() initialBgPosition: string = undefined;
     @Input() initialBgSizeValue: IBackgroundSize = undefined;
     @Input() initialTopPosValue: number = undefined;
@@ -39,8 +39,8 @@ export class ParallaxDirective implements OnInit, AfterViewInit {
         }
 
         if (this.initialBgImage) {
-            this.bgImage.style.backgroundImage = "url('" + this.initialBgImage + "')";
-            this.bgImage.style.backgroundRepeat = 'no-repeat';
+            this.bgImage.style.backgroundImage = "url('" + this.initialBgImage[0] + "'), url('"  + this.initialBgImage[1] + "')";
+            this.bgImage.style.backgroundRepeat = 'no-repeat, repeat-x';
         }
 
         if (this.initialTopPosValue) {

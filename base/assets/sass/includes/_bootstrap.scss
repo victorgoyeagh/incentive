@@ -34,6 +34,10 @@
     //width: 100%;
     width: auto;
 
+    &.full-width {
+        width: 100%;
+    }
+
     @media (min-width: $screen-md) {
       width: auto;
     }
@@ -63,7 +67,7 @@
 
     @media (max-width: $screen-md) {
       &.btn-sml {
-        padding: 20px 38px 17px 29px; //11px 26px 9px 20px;
+        padding: 20px 27px 17px 22px; // padding: 20px 38px 17px 29px; //11px 26px 9px 20px;
         // width: 100%;
         &:before {
           margin: 0px;

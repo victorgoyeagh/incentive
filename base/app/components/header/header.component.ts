@@ -28,10 +28,7 @@ export class HeaderComponent implements OnInit {
         null,
         ModalFormType.QuoteRequestForm,
         "bookmarkModal",
-        {
-            Width: '100%',
-            Height: '100%'
-        },
+        null,
         ModalLocation.Center
     );
 

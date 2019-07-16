@@ -206,6 +206,7 @@ hr {
 
 label {
   display: inline-block;
+  font-weight: 600;
 }
 
 .select {
@@ -236,6 +237,12 @@ input[type="range"] {
   border: 0;
   -webkit-appearance: none;
   height: 4px;
+}
+
+input[type="text"], input.text, textarea {
+
+  border-radius: 5px !important;
+  padding: 20px 15px;
 }
 
 a,

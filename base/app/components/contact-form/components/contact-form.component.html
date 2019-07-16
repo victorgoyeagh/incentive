@@ -3,7 +3,7 @@
 
         <form [formGroup]="contactForm" id="contactForm" class="" name="contactForm" autocomplete="true">
             <div class="row">
-                <div class="form-group col-xs-12 col-sm-12 col-md-6">
+                <div class="form-group col-xs-12 col-sm-6 col-md-6">
                     <label for="fullname">Fullname:</label>
                     <input id="fullname" formControlName="fullname" type="text" name="fullname" class="form-control" />
                     <div *ngIf="contactForm.controls.fullname.invalid && (contactForm.controls.fullname.dirty || contactForm.controls.fullname.touched)"
@@ -13,10 +13,7 @@
                         </span>
                     </div>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="form-group col-xs-12 col-sm-12 col-md-6">
+                <div class="form-group col-xs-12 col-sm-6 col-md-6">
                     <label for="email">Email:</label>
                     <input id="email" formControlName="email" type="text" name="email" class="form-control" />
                     <div *ngIf="contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)"
@@ -50,7 +47,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <button type="submit" class="btn btn-default" (click)="sendForm()">Send</button>
+                    <button type="submit" class="btn btn-default full-width" (click)="sendForm()">Send</button>
                 </div>
             </div>
         </form>

@@ -8,12 +8,12 @@ $clipped-allowance: 100px;
 }
 
 .scrollcontent {
-    float: left;
-    clear: both;
-    position: relative;
-    width: 100%;
-    border-bottom: 1px solid #e2e2e2;
-    margin-bottom: 26px;
+  float: left;
+  clear: both;
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid #e2e2e2;
+  margin-bottom: 26px;
 }
 
 .banner-bottom {
@@ -48,15 +48,19 @@ $clipped-allowance: 100px;
     padding-left: 0px;
     @media (min-width: $screen-sm) {
       padding-right: 0px;
-    } 
+    }
 
-    background: #141e30; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #243b55, #141e30); /* Chrome 10-25, Safari 5.1-6 */
+    /*background: #141e30;  
+    background: -webkit-linear-gradient(to right, #243b55, #141e30);  
     background: linear-gradient(
       to right,
       #243b55,
       #141e30
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    );*/
+
+    //background-image: url("assets/images/default/bg.jpg");
+    //background-position: top left;
+    //background-repeat: repeat-x;
 
     .banner-header-outter {
       display: table;
@@ -64,13 +68,13 @@ $clipped-allowance: 100px;
       height: 500px;
       // padding-top: 100px; //140px;
       @media (min-width: $screen-md) {
-       // padding-top: 100px;
-       float: inherit;
+        // padding-top: 100px;
+        float: inherit;
       }
-      @media (min-width: $screen-md) { 
+      @media (min-width: $screen-md) {
       }
     }
- 
+
     .rgt {
       padding-top: 0px;
 
@@ -82,12 +86,12 @@ $clipped-allowance: 100px;
         padding-top: 13vh;
       }
 
-      .main-image { 
+      .main-image {
         max-width: 370px;
         margin: 0 auto;
         max-width: 330px;
         float: right;
-        
+
         img {
           @include responsive-image;
         }
@@ -114,11 +118,11 @@ $clipped-allowance: 100px;
   position: absolute;
   top: 0;
 
-  background-position: bottom left;
+  background-position: bottom right;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   //transition : top 0.1s ease-out, bottom 0.1s ease-in;
-  @include brightness(30%);
+  @include brightness(40%);
 
   video {
     width: 100%;
@@ -150,12 +154,12 @@ $clipped-allowance: 100px;
     padding: 0px;
     float: none;
     @media (min-width: $screen-md) {
-        float: left;
+      float: left;
     }
     margin-top: 16px;
 
     li {
-        text-align: left;
+      text-align: left;
       padding-left: 0px !important;
     }
   }
@@ -176,12 +180,12 @@ $clipped-allowance: 100px;
     vertical-align: middle;
 
     h1 {
-        text-shadow: 1px 2px 1px black;
+      text-shadow: 1px 2px 1px black;
       margin-top: 0;
       text-align: left;
       color: $color--white;
       margin-bottom: 10px;
-      @include font-size(4.8);
+      @include font-size(4.4);
       font-weight: bold;
       line-height: 1.1;
 
@@ -222,7 +226,7 @@ $clipped-allowance: 100px;
     }
 
     .sub-heading {
-        font-family: $font-san-serif;
+      font-family: $font-san-serif;
       color: $color--white;
       text-align: left;
       font-weight: 300;
@@ -231,8 +235,8 @@ $clipped-allowance: 100px;
       margin: 20px 0px 40px 0px;
       padding-top: 0;
 
-      font-size: 1.4rem;
-      line-height: 22px !important;
+      font-size: 1.2rem;
+      line-height: 20px !important;
 
       @media (min-width: $screen-sm) {
         margin: 10px 0px;
@@ -454,6 +458,7 @@ $clipped-allowance: 100px;
   ul {
     line-height: 28px;
     li {
+      font-size: 12px;
     }
   }
 
