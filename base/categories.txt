@@ -1,0 +1,73 @@
+# IncentivePage
+
+#### Services
+Data Collection & Capture
+Data Validation & Cleansing
+Data Conversion & Formatting
+Data Visualisation & Contextualization
+Data Analysis & Comparison
+Data Integration & Linking
+Data Management
+
+
+#### App Products
+Dashboards
+APIs
+
+
+#### Formats
+Data formats
+	- XHTML
+	- XML
+	- JSON
+	- CSV
+	- PDF
+	- TXT (escaped)
+
+Databases
+	- MS SQL
+	- MySQl
+	- MongoDB
+	- Oracle
+
+
+#### Industries?
+Recruitment
+Property
+Travel & Tourism
+FinTech
+(E-)Commerce
+
+
+#### Data types
+Website data
+Customer data
+Purchase data
+Social data
+Smart TV Data
+3rd party data
+Mobile data
+
+
+#### Keywords
+Increase marketing efficiency
+Foundation for effective strategies
+From complex to readable
+Meaningful, structured and usable data
+Lead generation
+Data quality & accuracy
+Data security
+
+
+#### Strategies
+Maps
+Web sites
+E-marketing
+Online forms
+Seminar apps
+
+
+#### Influencers
+https://segmint.com/
+https://www.taskeater.com/
+https://www.scrapehero.com/
