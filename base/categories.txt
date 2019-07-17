@@ -3,7 +3,7 @@
 #### Services
 Data Collection & Capture
 Data Validation & Cleansing
-Data Conversion & Formatting
+Data Validation & Cleansing
 Data Visualisation & Contextualization
 Data Analysis & Comparison
 Data Integration & Linking
