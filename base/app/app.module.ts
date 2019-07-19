@@ -1,23 +1,20 @@
-import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 /* angular */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { CommonModule } from "@angular/common";
+import { HttpModule } from '@angular/http'; 
 
 /* third_party */
 import { NgRedux, NgReduxModule } from 'ng2-redux';
-import { Ng2Bs3ModalModule, ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
-import { RootReducer, appInitialState } from './state/state.store'; 
-import { Reducer } from 'redux';
+import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
+import { RootReducer } from './state/state.store';  
 
 /* third_party_material */
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /* components */
-import { Routing } from './routers/routing.route';
-import { HomeComponent } from './views/home.view';
+import { Routing } from './routers/routing.route'; 
 import { MainComponent } from './views/main.view';
 import { BaseComponent } from './base.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -35,16 +32,11 @@ import { HttpInterceptorService } from './services/httpinterceptor.service';
 import { IntroComponent } from './components/intro/intro.component';
 import { LoaderService } from './services/loader.service';
 
-
-
-
-
 @NgModule({
     declarations: [
         HeaderComponent,
         IntroComponent,
-        BaseComponent,
-        HomeComponent,
+        BaseComponent, 
         HeaderComponent,
         FooterComponent,
         MainComponent,
