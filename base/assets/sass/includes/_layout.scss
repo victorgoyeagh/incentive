@@ -7,6 +7,26 @@ $clipped-allowance: 100px;
   position: relative;
 }
 
+.app-image {
+    display: block;
+    //margin: auto;
+    float: right;
+    max-width: 360px;
+    img {
+        @include responsive-image;
+    }
+}
+
+.bdr-1 {
+    border-right: 1px solid #d0d0d0;
+    margin-right: 0px;
+    padding-right: 0px;
+}
+
+.rmv-padd-rgt {
+    padding-right: 0px;
+}
+
 .scrollcontent {
   float: left;
   clear: both;
@@ -269,16 +289,23 @@ $clipped-allowance: 100px;
 }
 
 .header {
-  // border-bottom: 1px solid $color-reddish-grey--wash;
+
+    &.overlay {
+        @media (max-width: $screen-md) {
+            border-bottom: 1px solid $color-reddish-grey--wash;
+            background-color: $color--white !important;
+
+            .navbar-brand {
+                background-image: url('/assets/images/default/logo-blk.png') !important;
+            }
+        }
+    }
+
   @media (min-width: $screen-md) {
     border-bottom: 0px solid $color-reddish-grey--wash;
-  }
-
-  @include transition(all, ease-out, 0.2s);
-  // background-color: $color--white !important;
-  @media (min-width: $screen-md) {
     background-color: transparent !important;
   }
+  @include transition(all, ease-out, 0.2s);
   z-index: 99;
   width: 100%;
   float: left;
@@ -363,7 +390,7 @@ $clipped-allowance: 100px;
       z-index: 9999;
       overflow: initial;
 
-      .image {
+      /*.image {
         max-width: 400px;
         margin: auto;
         margin-left: -72px;
@@ -376,7 +403,7 @@ $clipped-allowance: 100px;
             width: 23vw;
           }
         }
-      }
+      }*/
     }
 
     &.wo-padd {
