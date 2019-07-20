@@ -3,7 +3,7 @@
 #### Services
 Data Collection & Capture
 Data Validation & Cleansing
-Data Validation & Cleansing
+Data Conversion & Formatting
 Data Visualisation & Contextualization
 Data Analysis & Comparison
 Data Integration & Linking
@@ -24,11 +24,23 @@ Data formats
 	- PDF
 	- TXT (escaped)
 
-Databases
-	- MS SQL
-	- MySQl
+
+#### Tech
+Frontend
+	- Angular
+	- Jasmine/Karma
+	- CSS3/SASS
+	- HTML5
+	- NodeJs
+	- ExpressJs
 	- MongoDB
-	- Oracle
+	- JSON
+	- XML
+
+Content Management
+	- Umbraco >= 7
+	- ASP.NET MVC/CORE
+	- MSSQL
 
 
 #### Industries?
@@ -49,6 +61,15 @@ Smart TV Data
 Mobile data
 
 
+#### Strategies to mine data
+Web sites
+E-marketing
+Online forms
+iPad apps
+Events
+Maps
+
+
 #### Keywords
 Increase marketing efficiency
 Foundation for effective strategies
@@ -57,14 +78,6 @@ Meaningful, structured and usable data
 Lead generation
 Data quality & accuracy
 Data security
-
-
-#### Strategies
-Maps
-Web sites
-E-marketing
-Online forms
-Seminar apps
 
 
 #### Influencers
