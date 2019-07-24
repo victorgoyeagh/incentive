@@ -21,6 +21,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ModalOverlayComponent } from './components/modal/modal.component';
 
+
 /* services */
 import { CommunicationService } from './services/communication.service';
 import { ParallaxDirective } from './directives/parallax.directive';
@@ -31,9 +32,11 @@ import { QuoteFormModule } from './components/quote-form/quote-form.module';
 import { HttpInterceptorService } from './services/httpinterceptor.service';
 import { IntroComponent } from './components/intro/intro.component';
 import { LoaderService } from './services/loader.service';
+import { HomeComponent } from './views/home.view';
 
 @NgModule({
     declarations: [
+        HomeComponent,
         HeaderComponent,
         IntroComponent,
         BaseComponent, 
