@@ -1,11 +1,7 @@
 import { LoaderService } from './services/loader.service';
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { MenuCtrl } from './helpers/MenuCtrl';
-import { ModalInfo, ModalCommand, ModalType, ModalFormType, ModalLocation } from './entities/modal.entity';
-import { CommunicationService } from './services/communication.service';
 import { ParallaxDirection } from './directives/parallax.model';
-import { HttpClient } from '@angular/common/http';
-import { fromEvent } from 'rxjs/observable/fromEvent';
 
 
 
@@ -14,14 +10,13 @@ import { fromEvent } from 'rxjs/observable/fromEvent';
     templateUrl: './base.template.html'
 })
 
-export class BaseComponent implements OnInit, AfterViewInit, AfterViewChecked { 
+export class BaseComponent implements OnInit { 
     public currentYear: string = undefined;
     public ParallaxDirection = ParallaxDirection;
     public MenuCtrl = MenuCtrl;
 
-    constructor( private loaderService: LoaderService,
-        private _http: HttpClient,
-        private _communicationService: CommunicationService
+    constructor(
+        private loaderService: LoaderService
     ) {
     }
 
@@ -38,13 +33,7 @@ export class BaseComponent implements OnInit, AfterViewInit, AfterViewChecked {
         this.loaderService.myObservable.next(true);
 
     }
-
-    ngAfterViewInit() {
-
-    }
-    ngAfterViewChecked() {
-    }
-
+  
     logSelectedDate(event: any) {
         console.log(event)
     }

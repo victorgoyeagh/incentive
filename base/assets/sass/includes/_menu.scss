@@ -45,6 +45,19 @@ $nav-divider: #bdeae6;
   }
 
   .navbar-header {
+ 
+    &.overlay {
+      @media (max-width: $screen-md) {
+          border-bottom: 1px solid $color-reddish-grey--wash;
+          background-color: $color--white-alpha !important;
+
+          .navbar-brand {
+              background-image: url('/assets/images/default/logo-blk.png') !important;
+          }
+      }
+  }
+
+    min-height: 74px;
     top: 0;
     left: 0;
     position: absolute;

@@ -1,4 +1,7 @@
+import { map, startWith, distinctUntilChanged, shareReplay} from 'rxjs/operators';
 import { ClassHelper } from "./ClassUtil";
+import { fromEvent } from "rxjs/observable/fromEvent";
+
 //import { WindowHelper } from "./WindowCtrl";
 
 export class MenuCtrl {
@@ -6,7 +9,8 @@ export class MenuCtrl {
     private navigation: HTMLElement;
     private header: HTMLElement;
     private main: HTMLElement;
-    private dropdown: HTMLElement;
+    private dropdown: HTMLElement;    
+    public readonly windowScroll$ = fromEvent(window, 'scroll').pipe(map(x => window.scrollY), startWith(0), distinctUntilChanged(), shareReplay(1));
 
     constructor(btnId: string, navId: string, headerId: string, mainId: string, fixNav: boolean) {
         this.toggleBtn = document.getElementById(btnId);
@@ -26,6 +30,14 @@ export class MenuCtrl {
         if (fixNav) {
             this.ControlNavigationDisplay();
         }
+
+        this.windowScroll$.subscribe((value: number) => { 
+            if (value > 100) {
+                this.header.classList.add('overlay');
+            } else {
+                this.header.classList.remove('overlay');
+            }
+        })
     }
 
     //apply window height to responsive naviation

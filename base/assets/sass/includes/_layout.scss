@@ -3,6 +3,21 @@
 $banner-min-height: 650px;
 $clipped-allowance: 100px;
 
+.loader {
+  width: 100%;
+  position: absolute;
+  display: table;
+  top: 0px;
+  left: 0px;
+  
+  &__cont {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      color: $color--white;
+  }
+}
+
 .container {
   position: relative;
 }
@@ -230,7 +245,7 @@ $clipped-allowance: 100px;
     }
 
     h5 {
-        margin-top: 80px;
+      // margin-top: 80px;
       font-size: 10px;
       font-weight: 600;
       text-transform: uppercase;
@@ -289,17 +304,6 @@ $clipped-allowance: 100px;
 }
 
 .header {
-
-    &.overlay {
-        @media (max-width: $screen-md) {
-            border-bottom: 1px solid $color-reddish-grey--wash;
-            background-color: $color--white !important;
-
-            .navbar-brand {
-                background-image: url('/assets/images/default/logo-blk.png') !important;
-            }
-        }
-    }
 
   @media (min-width: $screen-md) {
     border-bottom: 0px solid $color-reddish-grey--wash;
