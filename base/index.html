@@ -44,6 +44,12 @@
 
     <script>
         document.write('<base href="' + document.location.pathname + '" />');
+
+        window.onload = function(ev) {   
+            var windowHeight = ev.currentTarget.outerHeight;
+            var loader = document.getElementById('loader');
+            loader.style.height = windowHeight + 'px';
+        }
     </script>
 </head>
  
@@ -59,12 +65,5 @@
     <!-- Javascripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script>
-        window.onload = function(ev) {   
-            var windowHeight = ev.currentTarget.outerHeight;
-            var loader = document.getElementById('loader');
-            loader.style.height = windowHeight + 'px';
-        }
-    </script>
 </body>
 </html>
