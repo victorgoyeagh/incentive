@@ -104,7 +104,10 @@
 }
 
 ul.social-links {
-  margin-top: 8px;
+  margin-top: 0px; 
+  @media (min-width: $screen-sm) {
+    margin-top: 8px; 
+  }
   width: 100%;
   position: relative;
   float: left;
