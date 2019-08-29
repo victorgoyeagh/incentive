@@ -1,5 +1,4 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
-import { LoaderService } from 'app/services/loader.service';
 
 
 @Component({
@@ -7,19 +6,12 @@ import { LoaderService } from 'app/services/loader.service';
     templateUrl: './intro.component.html',
     styleUrls: ['./intro.component.scss']
 })
-export class IntroComponent implements OnInit, AfterViewChecked {
+export class IntroComponent implements OnInit {
 
-    constructor(private loaderService: LoaderService) { }
+    constructor() { }
 
     ngOnInit() {
-
-        this.loaderService.myObservable.subscribe((value: Boolean) => {
-            console.log(value);
-        });
     }
 
-    ngAfterViewChecked() {
-
-    }
 
 }

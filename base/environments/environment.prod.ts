@@ -4,7 +4,7 @@ export const environment = {
     uiConfig: {
         modalDefaultDimensions: {
             Height: 400,
-            Width: 400
+            Width: 90
         },
         errorMessages: {
         }

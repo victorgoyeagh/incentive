@@ -1,4 +1,3 @@
-import { LoaderService } from './services/loader.service';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { MenuCtrl } from './helpers/MenuCtrl';
 import { ParallaxDirection } from './directives/parallax.model';
@@ -16,7 +15,6 @@ export class BaseComponent implements OnInit {
     public MenuCtrl = MenuCtrl;
 
     constructor(
-        private loaderService: LoaderService
     ) {
     }
 
@@ -30,8 +28,6 @@ export class BaseComponent implements OnInit {
 
         //set year
         this.currentYear = (new Date()).getFullYear().toString();
-        this.loaderService.myObservable.next(true);
-
     }
   
     logSelectedDate(event: any) {

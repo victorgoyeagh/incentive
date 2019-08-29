@@ -100,102 +100,105 @@
                     </div>
 
                     <div class="row">
-                            <div class="col-xs-12 col-md-6">
-                    <div class="row">
-                        <div class="form-group col-xs-12">
-                            <label>What services do you require?</label>
-                            <ol class="checkboxlist row">
-                                <li class="checkboxlist__item col-xs-12 col-sm-6">
-                                    <div class="pretty p-default p-curve p-thick">
-                                        <input (change)="updateCheckboxes('Web Design', $event)" type="checkbox"
-                                            id="tbWebDesign" name="tbWebDesign" />
-                                        <div class="state turquoise">
-                                            <label>Application Design</label>
-                                        </div>
+                        <div class="col-xs-12 col-md-12 col-lg-6">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label>What services do you require?</label>
+                                    <ol class="checkboxlist row">
+                                        <li class="checkboxlist__item col-xs-12 col-sm-6">
+                                            <div class="pretty p-default p-curve p-thick">
+                                                <input (change)="updateCheckboxes('Web Design', $event)" type="checkbox"
+                                                    id="tbWebDesign" name="tbWebDesign" />
+                                                <div class="state turquoise">
+                                                    <label>Application Design</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="checkboxlist__item col-xs-12 col-sm-6">
+                                            <div class="pretty p-default p-curve p-thick">
+                                                <input (change)="updateCheckboxes('Web Development', $event)"
+                                                    type="checkbox" id="tbWebDevelopment" name="tbWebDevelopment" />
+                                                <div class="state">
+                                                    <label>Web Development</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="checkboxlist__item col-xs-12 col-sm-6">
+                                            <div class="pretty p-default p-curve p-thick">
+                                                <input
+                                                    (change)="updateCheckboxes('Mobile Responsive Development', $event)"
+                                                    type="checkbox" id="tbMobileResponsiveDevelopment"
+                                                    name="tbMobileResponsiveDevelopment" />
+                                                <div class="state">
+                                                    <label>Mobile / Responsive Development</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="checkboxlist__item col-xs-12 col-sm-6">
+                                            <div class="pretty p-default p-curve p-thick">
+                                                <input (change)="updateCheckboxes('Content Management', $event)"
+                                                    type="checkbox" id="tbContentManagement" name="ContentManagement" />
+                                                <div class="state">
+                                                    <label>Content Management</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="checkboxlist__item col-xs-12 col-sm-6">
+                                            <div class="pretty p-default p-curve p-thick">
+                                                <input (change)="updateCheckboxes('Web Application', $event)"
+                                                    type="checkbox" id="tbWebApplication" name="tbWebApplication" />
+                                                <div class="state">
+                                                    <label>Web Application</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="checkboxlist__item col-xs-12 col-sm-6">
+                                            <div class="pretty p-default p-curve p-thick">
+                                                <input (change)="updateCheckboxes('Digital Marketing', $event)"
+                                                    type="checkbox" id="tbDigitalMarketing" name="tbDigitalMarketing" />
+                                                <div class="state">
+                                                    <label>Digital Marketing</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="checkboxlist__item col-xs-12 col-sm-6">
+                                            <div class="pretty p-default p-curve p-thick">
+                                                <input (change)="updateCheckboxes('Digital Marketing', $event)"
+                                                    type="checkbox" id="tbSocialMediaIntergration"
+                                                    name="Social Media Intergration" />
+                                                <div class="state">
+                                                    <label>Social Media Intergration</label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                    <div *ngIf="quoteForm.errors?.servicesRequired" class="error-list">
+                                        <span class="error-list__error">
+                                            <small>A service request is required</small>
+                                        </span>
                                     </div>
-                                </li>
-                                <li class="checkboxlist__item col-xs-12 col-sm-6">
-                                    <div class="pretty p-default p-curve p-thick">
-                                        <input (change)="updateCheckboxes('Web Development', $event)" type="checkbox"
-                                            id="tbWebDevelopment" name="tbWebDevelopment" />
-                                        <div class="state">
-                                            <label>Web Development</label>
-                                        </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-xs-12 col-md-12 col-lg-6">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="projectDesc">Briefly describe your project</label>
+                                    <textarea formControlName="projectDesc" class="form-control" name="projectDesc"
+                                        rows="8" cols="20" id="projectDesc"></textarea>
+                                    <div *ngIf="quoteForm.controls.projectDesc.invalid && (quoteForm.controls.projectDesc.dirty || quoteForm.controls.projectDesc.touched)"
+                                        class="error-list">
+                                        <span class="error-list__error"
+                                            *ngIf="quoteForm.controls.projectDesc.errors.required">
+                                            <small>Your budget is required</small>
+                                        </span>
                                     </div>
-                                </li>
-                                <li class="checkboxlist__item col-xs-12 col-sm-6">
-                                    <div class="pretty p-default p-curve p-thick">
-                                        <input (change)="updateCheckboxes('Mobile Responsive Development', $event)"
-                                            type="checkbox" id="tbMobileResponsiveDevelopment"
-                                            name="tbMobileResponsiveDevelopment" />
-                                        <div class="state">
-                                            <label>Mobile / Responsive Development</label>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="checkboxlist__item col-xs-12 col-sm-6">
-                                    <div class="pretty p-default p-curve p-thick">
-                                        <input (change)="updateCheckboxes('Content Management', $event)" type="checkbox"
-                                            id="tbContentManagement" name="ContentManagement" />
-                                        <div class="state">
-                                            <label>Content Management</label>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="checkboxlist__item col-xs-12 col-sm-6">
-                                    <div class="pretty p-default p-curve p-thick">
-                                        <input (change)="updateCheckboxes('Web Application', $event)" type="checkbox"
-                                            id="tbWebApplication" name="tbWebApplication" />
-                                        <div class="state">
-                                            <label>Web Application</label>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="checkboxlist__item col-xs-12 col-sm-6">
-                                    <div class="pretty p-default p-curve p-thick">
-                                        <input (change)="updateCheckboxes('Digital Marketing', $event)" type="checkbox"
-                                            id="tbDigitalMarketing" name="tbDigitalMarketing" />
-                                        <div class="state">
-                                            <label>Digital Marketing</label>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="checkboxlist__item col-xs-12 col-sm-6">
-                                    <div class="pretty p-default p-curve p-thick">
-                                        <input (change)="updateCheckboxes('Digital Marketing', $event)" type="checkbox"
-                                            id="tbSocialMediaIntergration" name="Social Media Intergration" />
-                                        <div class="state">
-                                            <label>Social Media Intergration</label>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ol>
-                            <div *ngIf="quoteForm.errors?.servicesRequired" class="error-list">
-                                <span class="error-list__error">
-                                    <small>A service request is required</small>
-                                </span>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                </div>
-
-                <div class="col-xs-12 col-md-6">
-                    <div class="row">
-                        <div class="form-group col-md-12">
-                            <label for="projectDesc">Briefly describe your project</label>
-                            <textarea formControlName="projectDesc" class="form-control" name="projectDesc" rows="8"
-                                cols="20" id="projectDesc"></textarea>
-                            <div *ngIf="quoteForm.controls.projectDesc.invalid && (quoteForm.controls.projectDesc.dirty || quoteForm.controls.projectDesc.touched)"
-                                class="error-list">
-                                <span class="error-list__error" *ngIf="quoteForm.controls.projectDesc.errors.required">
-                                    <small>Your budget is required</small>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
                     <div class="row">
@@ -235,21 +238,15 @@
                     <div class="row">
                         <div class="col-xs-12 text-center">
                             <div class="pretty p-default p-curve p-thick newsletter">
-                                <input  formControlName="newsletter" type="checkbox"
-                                    id="tbNewsletter" name="tbNewsletter" />
+                                <input formControlName="newsletter" type="checkbox" id="tbNewsletter"
+                                    name="tbNewsletter" />
                                 <div class="state">
                                     <label>I'd like to recieve monthly news
-                                            updates</label>
+                                        updates</label>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <button type="submit" class="btn btn-default" (click)="sendForm()">Send</button>
-                </div>
-            </div>-->
                 </form>
             </div>
         </div>

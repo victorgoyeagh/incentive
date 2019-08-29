@@ -2,10 +2,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContactFormComponent } from './components/contact-form.component';
-import { LoaderService } from 'app/services/loader.service';
-
-
-
 
 @NgModule({
   imports: [
@@ -13,7 +9,7 @@ import { LoaderService } from 'app/services/loader.service';
     ReactiveFormsModule,
     CommonModule
   ],
-  providers:[LoaderService],
+  providers:[],
   declarations: [ContactFormComponent],
   exports: [ContactFormComponent]
 })

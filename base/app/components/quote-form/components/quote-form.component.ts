@@ -40,9 +40,7 @@ export class QuoteFormComponent implements OnInit {
 
     servicesRequiredValidation(form: FormGroup) {
         const servicesVal = <Array<string>>form.get('services').value;
-        return { 'servicesRequired': false };
-        //console.log(servicesVal, servicesVal.length);
-        // return { 'servicesRequired':  (servicesVal.length) ? true : false };
+        return { 'servicesRequired': false }; 
     }
 
     updateCheckboxes(value: any, event: Event) {

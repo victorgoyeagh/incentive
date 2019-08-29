@@ -1,5 +1,4 @@
-import { LoaderService } from 'app/services/loader.service';
-import { Directive, ElementRef, HostListener, Input, OnChanges, OnInit, AfterViewInit } from "@angular/core";
+import { Directive, ElementRef, Input, OnInit } from "@angular/core";
 import { ParallaxDirection } from "./parallax.model";
 import { IBackgroundSize } from "./parallax.model.alt";
 
@@ -8,7 +7,7 @@ import { IBackgroundSize } from "./parallax.model.alt";
     selector: '[appParallax]'
 })
 
-export class ParallaxDirective implements OnInit, AfterViewInit {
+export class ParallaxDirective implements OnInit {
     public bgImage: HTMLDivElement;
     private scrollTopValue: number = 0;
     private ParallaxTopDirection = ParallaxDirection;
@@ -23,9 +22,7 @@ export class ParallaxDirective implements OnInit, AfterViewInit {
     @Input() initialHeightValue: string = undefined;
     @Input() startScrollValue: number = 0;
 
-    constructor(private el: ElementRef, 
-        private loaderService: LoaderService) {
-
+    constructor(private el: ElementRef) {
         this.bgImage = <HTMLDivElement>this.el.nativeElement;
         this.bgImage.style.transition = 'all 0.1s ease-in 0';
         this.bgImage.style.transitionProperty = 'top, bottom';
@@ -64,11 +61,7 @@ export class ParallaxDirective implements OnInit, AfterViewInit {
             bannerHeaderOutter.style.height = windowHeight + 'px';
         }
     }
-
-    ngAfterViewInit() {
-        this.loaderService.myObservable.next(true);
-    }
-
+ 
     applyParallax(scrollTopValue: number) {
 
         let negative: string = (this.parallaxTopDirection === ParallaxDirection.Up) ? '-' : '+';

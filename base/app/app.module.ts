@@ -1,4 +1,5 @@
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+
 /* angular */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -21,7 +22,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ModalOverlayComponent } from './components/modal/modal.component';
 
-
 /* services */
 import { CommunicationService } from './services/communication.service';
 import { ParallaxDirective } from './directives/parallax.directive';
@@ -29,9 +29,7 @@ import { ParallaxDirective } from './directives/parallax.directive';
 /* modules */
 import { ContactFormModule } from './components/contact-form/contact-form.module';
 import { QuoteFormModule } from './components/quote-form/quote-form.module';
-import { HttpInterceptorService } from './services/httpinterceptor.service';
-import { IntroComponent } from './components/intro/intro.component';
-import { LoaderService } from './services/loader.service';
+import { IntroComponent } from './components/intro/intro.component'; 
 import { HomeComponent } from './views/home.view';
 
 @NgModule({
@@ -39,8 +37,7 @@ import { HomeComponent } from './views/home.view';
         HomeComponent,
         HeaderComponent,
         IntroComponent,
-        BaseComponent, 
-        HeaderComponent,
+        BaseComponent,  
         FooterComponent,
         MainComponent,
         ModalOverlayComponent,
@@ -53,8 +50,7 @@ import { HomeComponent } from './views/home.view';
         ContactFormModule,
         BrowserModule,
         FormsModule,
-        ReactiveFormsModule,
-        HttpClientModule,
+        ReactiveFormsModule, 
         HttpModule,
         Routing,
         NgReduxModule,
@@ -62,11 +58,6 @@ import { HomeComponent } from './views/home.view';
         BrowserAnimationsModule
     ],
     providers: [
-        LoaderService,
-        { 
-            provide: HTTP_INTERCEPTORS,
-            useClass: HttpInterceptorService, multi: true 
-        },
         CommunicationService
     ],
     bootstrap:  [

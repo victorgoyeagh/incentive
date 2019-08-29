@@ -1,4 +1,3 @@
-import { LoaderService } from './../../../services/loader.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 
@@ -30,15 +29,10 @@ export class ContactFormComponent implements OnInit {
         newsletter: new FormControl('', [])
     });
 
-    constructor(
-        private loaderService: LoaderService
-    ) { 
-        
-
+    constructor() { 
     }
 
     ngOnInit() {
-        this.loaderService.myObservable.next(true);
     }
 
     sendForm() {
