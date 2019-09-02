@@ -77,6 +77,7 @@ $clipped-allowance: 100px;
   }
 
   &__banner {
+    background-color: #33534e;
     border-top: 2px solid #dafffb;
     min-height: 650px;
     padding-right: 0px;
@@ -141,6 +142,7 @@ $clipped-allowance: 100px;
 }
 
 .banner-bg {
+  right: 0px;
   padding-left: 30px;
   padding-right: 30px;
 
@@ -150,7 +152,8 @@ $clipped-allowance: 100px;
   }
   min-height: 650px;
   z-index: 1;
-  width: 100%;
+  // width: 100%;
+  width: 70%;
   position: absolute;
   top: 0;
 
@@ -174,9 +177,9 @@ $clipped-allowance: 100px;
   top: 0;
 
   background-image: url("/assets/images/default/alt.png");
-  background-position: right bottom; //right bottom, center bottom;
+  background-position: right bottom, center bottom;
   background-repeat: no-repeat;
-  background-size: 50%;
+  background-size: 100%;
 }
 
 .banner {

@@ -217,6 +217,7 @@ export class ModalOverlayComponent implements OnInit, OnChanges, AfterViewInit {
         let modalDialog = <HTMLDivElement>document.querySelector('.modal-dialog');
         modalDialog.style.width = width + "%";
         modalDialog.style.maxHeight = height + "px";
+        modalDialog.style.margin = "20px auto"; 
     }
 
 }

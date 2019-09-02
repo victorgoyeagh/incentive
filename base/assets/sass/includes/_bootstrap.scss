@@ -124,16 +124,60 @@
 
 .modal {
   .modal-header {
-    padding: 15px 15px 10px 15px;
+    position: relative;
+    height: 300px;
+    background: ghostwhite;
+    background: url("assets/images/default/114.jpg") no-repeat 0 0;
+    background-size: cover;
+    padding: 15px 20px 10px 20px;
+
+    .modal-title {
+      font-weight: 600;
+      color: white;
+      position: absolute;
+      bottom: 20px;
+      left: 7%;
+      bottom: 90px;
+    }
+
+    .modal-close {
+      right: 7%;
+      bottom: 90px;
+      top: initial;
+
+      i {
+        padding: 11px 14px;
+        border-radius: 40px;
+        &:before {
+          color: #ddd;
+        }
+      }
+    } 
+
     h3 {
       margin: 0px;
       padding: 0px;
+      font-weight: 800; 
+      color: #ffffff;
     }
   }
 
-  .modal-content { 
+  .modal-content {
+    overflow: hidden;
     margin-bottom: 40px;
     @include radius(4px);
+
+    .modal-container {
+
+      .modal-body {
+        width: 90%;
+        margin: 0 auto;
+        background: white;
+        margin-top: -80px;
+        border-radius: 4px;
+        padding: 40px;
+      }
+    }
   }
 
   .modal-footer {
