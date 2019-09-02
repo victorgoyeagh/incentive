@@ -1,4 +1,3 @@
-import { register } from 'ts-node/dist';
 import { MiscUtil } from './../helpers/MiscUtils';
 
 export class ModalInfo {

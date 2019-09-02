@@ -14,9 +14,9 @@ export class CommunicationService {
         this.sharedModalInfoData.next(value);
     }
 
-    public SharedModalIsOpenState: Subject<boolean> = new Subject<boolean>();
+    public sharedModalIsOpenState: Subject<boolean> = new Subject<boolean>();
     public ShareModalIsOpenState(value: boolean){
-        this.SharedModalIsOpenState.next(value);
+        this.sharedModalIsOpenState.next(value);
     }
 
     public sharedModalResponseData: Subject<any> = new Subject<any>();

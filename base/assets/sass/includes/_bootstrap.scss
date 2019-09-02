@@ -1,6 +1,7 @@
 @import './variables';
 
 .modal-close {
+  text-shadow: 1px 1px 1px #8a8a8a;
   position: absolute;
   right: 30px;
   top: 28px;
@@ -127,11 +128,12 @@
     position: relative;
     height: 300px;
     background: ghostwhite;
-    background: url("assets/images/default/114.jpg") no-repeat 0 0;
+    background: url("/assets/images/default/114.jpg") no-repeat 0 0;
     background-size: cover;
     padding: 15px 20px 10px 20px;
 
     .modal-title {
+      text-shadow: 1px 1px 1px $color--dark-grey--greyed-out;
       font-weight: 600;
       color: white;
       position: absolute;

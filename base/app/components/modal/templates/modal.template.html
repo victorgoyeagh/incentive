@@ -43,12 +43,19 @@
             <modal-footer>
                 <input id="modalResponse" name="modalResponse" type="hidden" value="" />
                 <div class="footer-container">
-                    <button type="button" class="btn btn-default" (click)="CloseModal(false, $event)">
-                        {{ (modalConfirmText) ? modalConfirmText : 'OK' }}
-                    </button>
-                    <button type="button" class="btn btn-default btn-brand btn-l" (click)="CloseModal(true, $event)">
-                        {{ (modalCancelText) ? modalCancelText : 'Cancel' }}
-                    </button>
+                    <div class="row">
+                        <div class="col-sm-2 col-sm-push-2">
+                            <button type="button" class="btn btn-default" (click)="CloseModal(false, $event)">
+                                {{ (modalConfirmText) ? modalConfirmText : 'OK' }}
+                            </button>
+                        </div> 
+                        <div class="col-sm-2 col-sm-push-4">
+                            <button type="button" class="btn btn-default btn-brand btn-l"
+                                (click)="CloseModal(true, $event)">
+                                {{ (modalCancelText) ? modalCancelText : 'Cancel' }}
+                            </button>
+                        </div>
+                    </div> 
                 </div>
             </modal-footer>
         </div>

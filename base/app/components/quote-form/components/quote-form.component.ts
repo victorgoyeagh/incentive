@@ -1,9 +1,6 @@
 import { FormGroup, FormControl, Validators, FormArray, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
-import { ICheckboxItem } from '../models/quote.models';
-
-
 @Component({
     selector: 'app-quote-form',
     templateUrl: './quote-form.component.html',

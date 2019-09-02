@@ -5,8 +5,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { IDimensions, ModalFormType, ModalCommand, ModalType, ModalInfo, ModalLocation } from './../../entities/modal.entity';
 import { ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
 import { IModalReturnValue } from "./../../entities/modal_alt.entity";
-import { MiscUtil } from './../../helpers/MiscUtils';
-import { ClassHelper } from './../../helpers/ClassUtil';
+import { MiscUtil } from './../../helpers/MiscUtils'; 
 import { environment } from 'environments/environment.dev';
 import { CommunicationService } from 'app/services/communication.service';
 
@@ -125,12 +124,9 @@ export class ModalOverlayComponent implements OnInit, OnChanges, AfterViewInit {
         }
 
         let modalDialog = <HTMLDivElement>document.querySelector('.modal-dialog');
-        let ch = new ClassHelper(modalDialog);
-        ch.removeClass('center');
-        ch.removeClass('right');
-        ch.removeClass('left');
-        ch.addClass(this.locationClass);
-
+        modalDialog.classList.remove('center', 'right', 'left');
+        modalDialog.classList.add(this.locationClass);
+ 
     }
 
     /** file management end **/

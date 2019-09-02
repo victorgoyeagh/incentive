@@ -1,4 +1,3 @@
-import { WindowHelper } from "./WindowCtrl";
 
 export class ScrollTo {
     private scrollButton: HTMLElement;
@@ -33,7 +32,7 @@ export class ScrollTo {
         let _self = this,
             scrollPermit = 50,
             scrollSpeed = 10,
-            tmpScrollVal = new WindowHelper().ScrollValue();
+            tmpScrollVal = window.scrollY;
 
         if (!(isNaN(scrollVal)) && (ev != null)) {
 

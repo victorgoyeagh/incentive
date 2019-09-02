@@ -1,5 +1,3 @@
-import { HttpClientModule } from '@angular/common/http';
-
 /* angular */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -30,11 +28,9 @@ import { ParallaxDirective } from './directives/parallax.directive';
 import { ContactFormModule } from './components/contact-form/contact-form.module';
 import { QuoteFormModule } from './components/quote-form/quote-form.module';
 import { IntroComponent } from './components/intro/intro.component'; 
-import { HomeComponent } from './views/home.view';
 
 @NgModule({
     declarations: [
-        HomeComponent,
         HeaderComponent,
         IntroComponent,
         BaseComponent,  

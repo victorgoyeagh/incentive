@@ -1,8 +1,5 @@
 import { map, startWith, distinctUntilChanged, shareReplay} from 'rxjs/operators';
-import { ClassHelper } from "./ClassUtil";
 import { fromEvent } from "rxjs/observable/fromEvent";
-
-//import { WindowHelper } from "./WindowCtrl";
 
 export class MenuCtrl {
     private toggleBtn: HTMLElement;
@@ -25,7 +22,6 @@ export class MenuCtrl {
         });
 
         this.ForceNavigationHeight(true);
-       // this.ForceNavigationHeight(false);
 
         if (fixNav) {
             this.ControlNavigationDisplay();
@@ -43,8 +39,7 @@ export class MenuCtrl {
     //apply window height to responsive naviation
     ForceNavigationHeight = (init) => {
         let _self = this;
-        window.addEventListener((init) ? "load" : "resize", function (ev) {
-           // _self.navigation.style.height = window.innerHeight + "px";
+        window.addEventListener((init) ? "load" : "resize", function () {
             _self.navigation.style.setProperty('height', window.innerHeight + "px", 'important');
         });
     }
@@ -57,7 +52,6 @@ export class MenuCtrl {
             let _self = this;
             let header = <HTMLElement>document.querySelectorAll(".header")[0];
             let headerStyle = header.style;
-            let ns = new ClassHelper(header);
 
             if (scrollPos < currPosition) {
                 headerStyle.position = "fixed";
@@ -71,28 +65,23 @@ export class MenuCtrl {
 
     //toggle navigation on responsive
     ToggleNavigation = (btn, nav, header, main) => {
-        let navLeft = nav.style.left;
-        let ms = main.style;
-        let chHeader = new ClassHelper(header);
-        let chMain = new ClassHelper(main);
-        //let wd = new WindowHelper();
 
-        if ((!navLeft) || (navLeft == "100%")) {
+        if ((!nav.style.left) || (nav.style.left == "100%")) {
             nav.style.left = "20%";
             header.style.left = "-80%";
-            ms.left = "-80%";
-            ms.position = "absolute";
-            chHeader.addClass("open");
-            chMain.addClass("open");
-            // wd.disableScroll();
+            main.style.left = "-80%";
+            main.style.position = "absolute";
+
+            (<HTMLDivElement>header).classList.add('open');
+            (<HTMLDivElement>main).classList.add('open'); 
         } else {
             nav.style.left = "100%";
             header.style.left = "0%";
-            ms.left = "0%";
-            ms.position = "relative";
-            chHeader.removeClass("open");
-            chMain.removeClass("open");
-            // wd.enableScroll();
+            main.style.left = "0%";
+            main.style.position = "relative";
+
+            (<HTMLDivElement>header).classList.remove('open');
+            (<HTMLDivElement>main).classList.remove('open'); 
         }
 
         return false;
