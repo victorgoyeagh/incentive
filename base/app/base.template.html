@@ -1,128 +1,123 @@
 <div id="main">
-    <a href="#navigation" class="sr-only" role="navigation">Skip navigation</a>
-
-    <a href="#navigation" class="sr-only">Skip navigation</a>
+    <a href="#navigation" class="sr-only" role="link">Skip navigation</a>
     <app-header></app-header>
     <div id="toggleMain" class="toggleMain">
-
         <main>
             <div class="main">
-
-                <div id="banner-container" #bannerContainer class="container-fluid container-fluid__banner"
-                    #containerBanner>
-
-                    <div class="banner-bg" [parallaxSpeed]="3" [parallaxTopDirection]="ParallaxDirection.Down"
-                        [initialBgImage]="['/assets/images/default/cigna-global.original.jpg', '/assets/images/default/bg.jpg']"
-                        appParallax></div>
-
-                    <div id="banner-inner" class="container-fluid container-fluid__header">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-8 col-lg-6">
-                                <section class="banner">
-                                    <div id="banner-header-outter" class="banner-header-outter">
-                                        <div class="banner-header">
-                                            <h5>Creative app solutions for SME<span>s</span>
-                                            </h5>
-                                            <!--<h1>Intuitive web &amp; mobile applications.</h1>-->
-                                            <h1>Witness your data evolve...</h1>
-                                            <h2 class="sub-heading">
-                                                We craft user-centric, responsive web applications, that combine
-                                                great user experiences, with a combination of incentives and
-                                                provisions; arousing user interaction, assisting fluid navigation
-                                                towards one's desired goals, enhancing productivity.
-                                            </h2>
-                                            <div class="list-inline banner-buttons">
-                                                <div class="text-left">
-                                                    <button class="btn btn-default btn-sml">Learn More <i
-                                                            class="fa fa-angle-right" aria-hidden="true"></i></button>
-                                                    <button class="btn btn-default btn-sml btn-brand">Get in touch
-                                                        <i class="fa fa-angle-right" aria-hidden="true"></i></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <section class="section overlay-image blue-bg">
-                    <div class="container-fluid">
-                        <div class="row">
-
-                            <div class="col-xs-12">
-
-                                <h3>One stop <span></span></h3>
-                                <div class="row">
-
-                                    <div class="col-xs-12 col-sm-6 col-md-5">
-                                        <div class="row bdr-1">
-                                            <div class="col-xs-12">
-                                                <h4 class="intro-header">Witness Your data evolve</h4>
-                                            </div>
-
-                                            <div class="col-xs-12 rmv-padd-rgt">
-                                                <div class="app-image">
-                                                    <img src="../assets/images/default/conseris-app.png" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 col-md-7">
-
-                                        <h4>Transform your company's data.</h4>
-                                        <p class="intro-text">
-                                            Transform your company's data, from its current form to manageable,
-                                            summarised, human readable illustrations; providing detailed however clear
-                                            insights into
-                                            projects and business performance. Interactivity tailored to your company's
-                                            workflow; complex operations are untangled becoming transparent,
-                                            improve the depth and quality of customer relationships and enabling
-                                            key business decisions that lead to success.
-                                        </p>
-
-                                        <button class="btn btn-default btn-brand">Read more
-                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="section">
-                    <div class="container-fluid">
-
-                        <h4 class="intro-header">Lets talk some more...<span></span></h4>
-                        <div class="row">
-
-                            <div class="col-xs-12 col-sm-5 col-md-5">
-                                <h4>Get in touch</h4>
-                                <p>+44 (0)800 6345 7890.
-                                    <br />
-                                    <a href="mailto:info@incentive.com">info@incentive.com</a>
-                                </p>
-                                <p>
-                                    <a href="#" title="Request Form">Request Form</a>
-                                </p>
-                            </div>
-                            <div class="col-xs-12 col-sm-7 col-md-7">
-                                <app-contact-form></app-contact-form>
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
+                <router-outlet></router-outlet>
             </div>
         </main>
-
         <app-footer></app-footer>
-    
     </div>
 </div>
 
 <e-modal></e-modal>
+
+<!--
+<div id="banner-container" #bannerContainer class="container-fluid container-fluid__banner" #containerBanner>
+
+    <div class="banner-bg" [parallaxSpeed]="3" [parallaxTopDirection]="ParallaxDirection.Down"
+      [initialBgImage]="['/assets/images/default/cigna-global.original.jpg', '/assets/images/default/bg.jpg']"
+      appParallax></div>
+  
+    <div id="banner-inner" class="container-fluid container-fluid__header">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-lg-6">
+          <section class="banner">
+            <div id="banner-header-outter" class="banner-header-outter">
+              <div class="banner-header">
+                <h5>Creative app solutions for SME<span>s</span>
+                </h5> 
+                <h1>Witness your data evolve...</h1>
+                <h2 class="sub-heading">
+                  We craft user-centric, responsive web applications, that combine
+                  great user experiences, with a combination of incentives and
+                  provisions; arousing user interaction, assisting fluid navigation
+                  towards one's desired goals, enhancing productivity.
+                </h2>
+                <div class="list-inline banner-buttons">
+                  <div class="text-left">
+                    <button class="btn btn-default btn-sml">Learn More <i class="fa fa-angle-right"
+                        aria-hidden="true"></i></button>
+                    <button class="btn btn-default btn-sml btn-brand">Get in touch
+                      <i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  
+</div>
+  
+<section class="section overlay-image blue-bg">
+<div class="container-fluid">
+    <div class="row">
+
+    <div class="col-xs-12">
+
+        <h3>One stop <span></span></h3>
+        <div class="row">
+
+        <div class="col-xs-12 col-sm-6 col-md-5">
+            <div class="row bdr-1">
+            <div class="col-xs-12">
+                <h4 class="intro-header">Witness Your data evolve</h4>
+            </div>
+
+            <div class="col-xs-12 rmv-padd-rgt">
+                <div class="app-image">
+                <img src="../assets/images/default/conseris-app.png" />
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-7">
+
+            <h4>Transform your company's data.</h4>
+            <p class="intro-text">
+            Transform your company's data, from its current form to manageable,
+            summarised, human readable illustrations; providing detailed however clear
+            insights into
+            projects and business performance. Interactivity tailored to your company's
+            workflow; complex operations are untangled becoming transparent,
+            improve the depth and quality of customer relationships and enabling
+            key business decisions that lead to success.
+            </p>
+
+            <button class="btn btn-default btn-brand">Read more
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </button>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+</section>
+
+<section class="section">
+<div class="container-fluid">
+
+    <h4 class="intro-header">Lets talk some more...<span></span></h4>
+    <div class="row">
+
+    <div class="col-xs-12 col-sm-5 col-md-5">
+        <h4>Get in touch</h4>
+        <p>+44 (0)800 6345 7890.
+        <br />
+        <a href="mailto:info@incentive.com">info@incentive.com</a>
+        </p>
+        <p>
+        <a href="#" title="Request Form">Request Form</a>
+        </p>
+    </div>
+    <div class="col-xs-12 col-sm-7 col-md-7">
+        <app-contact-form></app-contact-form>
+
+    </div>
+    </div>
+</div>
+</section>
+ -->

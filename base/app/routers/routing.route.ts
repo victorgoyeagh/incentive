@@ -1,19 +1,20 @@
-import { MainComponent } from './../views/main.view';
 import { IntroComponent } from './../components/intro/intro.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { HomepageComponent } from 'app/pages/homepage/homepage.component';
+import { BaseComponent } from 'app/base.component';
+import { MainTemplate } from './../views/main.view';
 
 const appRoutes: Routes = [
     {
         path: '', 
-        component: MainComponent,
-        pathMatch: 'full'
-    },
-    {
-        path: 'work', 
-        component: IntroComponent,
-        pathMatch: 'full'
+        component: MainTemplate,
+        children: [
+            {
+                path: '', 
+                component: HomepageComponent
+            }
+        ]
     }
 ];
 

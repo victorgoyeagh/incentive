@@ -14,11 +14,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /* components */
 import { Routing } from './routers/routing.route'; 
-import { MainComponent } from './views/main.view';
+import { MainTemplate } from './views/main.view';
 import { BaseComponent } from './base.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ModalOverlayComponent } from './components/modal/modal.component';
+
 
 /* services */
 import { CommunicationService } from './services/communication.service';
@@ -28,14 +29,16 @@ import { ParallaxDirective } from './directives/parallax.directive';
 import { ContactFormModule } from './components/contact-form/contact-form.module';
 import { QuoteFormModule } from './components/quote-form/quote-form.module';
 import { IntroComponent } from './components/intro/intro.component'; 
+import { HomepageComponent } from './pages/homepage/homepage.component';
 
 @NgModule({
     declarations: [
+        HomepageComponent,
         HeaderComponent,
         IntroComponent,
         BaseComponent,  
         FooterComponent,
-        MainComponent,
+        MainTemplate,
         ModalOverlayComponent,
         ParallaxDirective
     ],
