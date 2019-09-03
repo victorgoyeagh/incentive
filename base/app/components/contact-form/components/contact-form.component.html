@@ -4,22 +4,22 @@
         <form [formGroup]="contactForm" id="contactForm" class="" name="contactForm" autocomplete="true">
             <div class="row">
                 <div class="form-group col-xs-12 col-sm-6 col-md-6">
-                    <label for="fullname">Fullname:</label>
+                    <label for="fullname">Full name:</label>
                     <input id="fullname" formControlName="fullname" type="text" name="fullname" class="form-control" />
                     <div *ngIf="contactForm.controls.fullname.invalid && (contactForm.controls.fullname.dirty || contactForm.controls.fullname.touched)"
                         class="error-list">
                         <span class="error-list__error" *ngIf="contactForm.controls.fullname.errors.required">
-                            <small>The fullname is required</small>
+                            <small>The full name is required</small>
                         </span>
                     </div>
                 </div>
                 <div class="form-group col-xs-12 col-sm-6 col-md-6">
-                    <label for="email">Email:</label>
+                    <label for="email">E-mail:</label>
                     <input id="email" formControlName="email" type="text" name="email" class="form-control" />
                     <div *ngIf="contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)"
                         class="error-list">
                         <span class="error-list__error" *ngIf="contactForm.controls.email.errors.required">
-                            <small>The email is required</small>
+                            <small>The e-mail is required</small>
                         </span>
                     </div>
                 </div>
@@ -41,8 +41,7 @@
 
             <div class="row">
                 <div class="checkbox col-xs-12">
-                    <label><input formControlName="newsletter" type="checkbox"> I'd like to recieve monthly news
-                        updates</label>
+                    <label><input formControlName="newsletter" type="checkbox"> I'd like to recieve monthly news updates</label>
                 </div>
             </div>
             <div class="row">
@@ -55,13 +54,13 @@
         <!-- <form [formGroup]="contactForm" id="contactForm" class="" name="contactForm" autocomplete="true">
             <div class="row">
                 <div class="form-group col-xs-12 col-sm-12 col-md-6">
-                    <label for="fullname">Fullname:</label>
+                    <label for="fullname">Full name:</label>
                     <input id="fullname" formControlName="fullname" type="text" name="fullname"
                         class="form-control" />
                     <div *ngIf="contactForm.controls.fullname.invalid && (contactForm.controls.fullname.dirty || contactForm.controls.fullname.touched)"
                         class="error-list">
                         <span class="error-list__error" *ngIf="contactForm.controls.fullname.errors.required">
-                            <small>The fullname is required</small>
+                            <small>The full name is required</small>
                         </span>
                     </div>
                 </div>

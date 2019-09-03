@@ -89,7 +89,7 @@ $nav-divider: #bdeae6;
     }
 
     .navbar-brand {
-      margin-left: 15px;
+      // margin-left: 15px;
       padding: 0px;
       min-width: 150px;
       width: auto;
@@ -101,14 +101,11 @@ $nav-divider: #bdeae6;
       background-position: 0 26px;
       background-repeat: no-repeat;
       background-image: $logo--white;
-      // background-image: $logo--black;
 
       @media (min-width: $screen-md) {
         top: 10px;
         margin-left: 0px;
         background-image: $logo--white;
-        // background-image: $logo--db;
-        // min-width: 180px;
       }
 
       img {

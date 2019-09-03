@@ -10,7 +10,6 @@ import { ParallaxDirection } from 'app/directives/parallax.model';
 export class MainTemplate { 
     public currentYear: string = undefined;
     public ParallaxDirection = ParallaxDirection;
-    public MenuCtrl = MenuCtrl;
     
     constructor() { }
 

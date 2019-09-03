@@ -1,9 +1,13 @@
-import { IntroComponent } from './../components/intro/intro.component';
+import { ContactUsComponent } from './../pages/contact-us/contact-us.component';
+import { WhoWeAreComponent } from './../pages/who-we-are/who-we-are.component';
+import { BlogComponent } from './../pages/blog/blog.component';
+import { WorkComponent } from './../pages/work/work.component';
+import { ServicesComponent } from './../pages/services/services.component';
+import { HomepageComponent } from './../pages/homepage/homepage.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomepageComponent } from 'app/pages/homepage/homepage.component';
-import { BaseComponent } from 'app/base.component';
 import { MainTemplate } from './../views/main.view';
+
 
 const appRoutes: Routes = [
     {
@@ -13,6 +17,26 @@ const appRoutes: Routes = [
             {
                 path: '', 
                 component: HomepageComponent
+            },
+            {
+                path: 'services', 
+                component: ServicesComponent
+            },
+            {
+                path: 'work', 
+                component: WorkComponent
+            },
+            {
+                path: 'blog', 
+                component: BlogComponent
+            },
+            {
+                path: 'who-are-we', 
+                component: WhoWeAreComponent
+            },
+            {
+                path: 'contact', 
+                component: ContactUsComponent
             }
         ]
     }

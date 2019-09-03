@@ -1,11 +1,14 @@
+import { ParallaxDirection } from './../../directives/parallax.model';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
-export class HomepageComponent implements OnInit { 
+export class HomepageComponent implements OnInit {
+  public ParallaxDirection = ParallaxDirection;
 
   constructor() { }
 

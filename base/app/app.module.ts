@@ -20,7 +20,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ModalOverlayComponent } from './components/modal/modal.component';
 
-
 /* services */
 import { CommunicationService } from './services/communication.service';
 import { ParallaxDirective } from './directives/parallax.directive';
@@ -30,10 +29,20 @@ import { ContactFormModule } from './components/contact-form/contact-form.module
 import { QuoteFormModule } from './components/quote-form/quote-form.module';
 import { IntroComponent } from './components/intro/intro.component'; 
 import { HomepageComponent } from './pages/homepage/homepage.component';
+import { WhoWeAreComponent } from './pages/who-we-are/who-we-are.component';
+import { BlogComponent } from './pages/blog/blog.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { WorkComponent } from './pages/work/work.component';
 
 @NgModule({
     declarations: [
         HomepageComponent,
+        WhoWeAreComponent,
+        ServicesComponent,
+        BlogComponent,
+        WorkComponent,
+        ContactUsComponent,
         HeaderComponent,
         IntroComponent,
         BaseComponent,  
